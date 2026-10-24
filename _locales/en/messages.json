@@ -315,6 +315,10 @@
     "message": "Matching vouchers",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Remind me at checkout",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Remind me later (1 hour)",
     "description": "Banner action."

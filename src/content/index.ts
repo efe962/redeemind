@@ -4,8 +4,9 @@ import { isCheckoutUrl, hasCouponField } from '../lib/checkout';
 import type { RedeemindSettings } from '../lib/settings';
 import type { Voucher } from '../lib/schema';
 import { renderVoucherText } from '../lib/dom-render';
+import { requestPassword } from '../lib/password-dialog';
 
-const i18n = await createI18n();
+let i18n: Awaited<ReturnType<typeof createI18n>>;
 
 interface PageState {
   vouchers: Voucher[];
@@ -14,13 +15,29 @@ interface PageState {
 
 let host: HTMLDivElement | undefined;
 let refreshTimer: ReturnType<typeof setTimeout> | undefined;
+let refreshInFlight = false;
+let refreshQueued = false;
+let lastRenderKey = '';
 let currentUrl = location.href;
 
 function requestState(): Promise<PageState> {
-  return browser.runtime.sendMessage({
+  return sendMessageWithRetry({
     type: 'getPageState',
     url: location.href,
   }) as Promise<PageState>;
+}
+
+async function sendMessageWithRetry(message: unknown): Promise<unknown> {
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await browser.runtime.sendMessage(message);
+    } catch (error) {
+      lastError = error;
+      await new Promise((resolve) => setTimeout(resolve, 100 * (attempt + 1)));
+    }
+  }
+  throw lastError;
 }
 
 function shouldShow(settings: RedeemindSettings): boolean {
@@ -29,10 +46,12 @@ function shouldShow(settings: RedeemindSettings): boolean {
   return isCheckoutUrl(location.href) || (settings.useDomHeuristic && hasCouponField());
 }
 
+function isCheckoutPage(settings: RedeemindSettings): boolean {
+  return isCheckoutUrl(location.href) || (settings.useDomHeuristic && hasCouponField());
+}
+
 function isSuppressed(domain: string): boolean {
   if (sessionStorage.getItem(`redeemind:closed:${domain}`) === 'true') return true;
-  const until = Number(sessionStorage.getItem(`redeemind:remind:${domain}`) ?? 0);
-  if (until > Date.now()) return true;
   return localStorage.getItem(`redeemind:mute:${domain}`) === 'true';
 }
 
@@ -42,16 +61,38 @@ function formatExpiry(value?: string): string {
 }
 
 function render(state: PageState): void {
+  const domain = location.hostname;
+  const checkoutReminder = localStorage.getItem(`redeemind:checkout:${domain}`) === 'true';
+  const checkout = isCheckoutPage(state.settings);
+  const renderKey = JSON.stringify({
+    url: location.href,
+    domain,
+    checkout,
+    suppressed: isSuppressed(domain),
+    displayMode: state.settings.displayMode,
+    useDomHeuristic: state.settings.useDomHeuristic,
+    vouchers: state.vouchers.map(({ id, status, updatedAt, expiresAt, title, value, currency }) => ({
+      id,
+      status,
+      updatedAt,
+      expiresAt,
+      title,
+      value,
+      currency,
+    })),
+  });
+  if (renderKey === lastRenderKey) return;
+  lastRenderKey = renderKey;
   if (
     state.settings.displayMode === 'badge' ||
     !shouldShow(state.settings) ||
+    (checkoutReminder && !checkout) ||
     state.vouchers.length === 0
   ) {
     host?.remove();
     host = undefined;
     return;
   }
-  const domain = location.hostname;
   if (isSuppressed(domain)) return;
   host?.remove();
   host = document.createElement('div');
@@ -84,8 +125,7 @@ function render(state: PageState): void {
   for (const [action, message, secondary] of [
     ['copy', 'copyCode', false],
     ['redeem', 'markRedeemed', false],
-    ['hour', 'remindHour', true],
-    ['day', 'remindDay', true],
+    ['checkout', 'remindCheckout', true],
     ['domain', 'muteDomain', true],
     ['close', 'close', true],
   ] as const) {
@@ -103,12 +143,9 @@ function render(state: PageState): void {
     const paragraph = document.createElement('p');
     renderVoucherText(paragraph, voucher, false);
     if (voucher.value !== undefined) {
-      const value =
-        voucher.type === 'percent'
-          ? `${i18n.formatNumber(voucher.value)}%`
-          : voucher.currency
-            ? i18n.formatCurrency(voucher.value, voucher.currency)
-            : i18n.formatNumber(voucher.value);
+      const value = voucher.currency
+        ? i18n.formatCurrency(voucher.value, voucher.currency)
+        : i18n.formatNumber(voucher.value);
       paragraph.append(`: ${value}`);
     }
     paragraph.append(document.createElement('br'), formatExpiry(voucher.expiresAt));
@@ -118,6 +155,21 @@ function render(state: PageState): void {
     button.addEventListener('click', () => {
       const action = button.dataset.action;
       if (action === 'copy') {
+        const originalLabel = button.textContent ?? '';
+        const originalAriaLabel = button.getAttribute('aria-label');
+        const setCopyState = (success: boolean) => {
+          button.textContent = success ? '✓' : '×';
+          button.setAttribute('aria-live', 'polite');
+          button.setAttribute('aria-label', success ? '✓' : '×');
+          button.style.background = success ? '#15803d' : '#b91c1c';
+          window.setTimeout(() => {
+            button.textContent = originalLabel;
+            if (originalAriaLabel) button.setAttribute('aria-label', originalAriaLabel);
+            else button.removeAttribute('aria-label');
+            button.removeAttribute('aria-live');
+            button.style.background = '';
+          }, 1800);
+        };
         const copy = (password?: string) =>
           browser.runtime
             .sendMessage({
@@ -127,22 +179,43 @@ function render(state: PageState): void {
               pageUrl: location.href,
             })
             .then((code: unknown) => navigator.clipboard.writeText(String(code)));
-        void copy().catch(() => {
-          const password = window.prompt(i18n.message('passwordRequired'));
-          if (password) void copy(password);
-        });
+        void (async () => {
+          try {
+            await copy();
+          } catch {
+            const password = await requestPassword(
+              i18n.message('passwordRequired'),
+              undefined,
+              async (value) => {
+                await copy(value);
+              },
+              i18n.message('errorInvalidPassword'),
+            );
+            if (!password) return;
+          }
+          setCopyState(true);
+        })().catch(() => setCopyState(false));
       }
-      if (action === 'redeem')
-        void browser.runtime.sendMessage({
+      if (action === 'redeem') {
+        void sendMessageWithRetry({
           type: 'redeemVoucher',
           id: first.id,
           pageUrl: location.href,
-        });
-      if (action === 'hour' || action === 'day') {
-        sessionStorage.setItem(
-          `redeemind:remind:${domain}`,
-          String(Date.now() + (action === 'hour' ? 3600000 : 86400000)),
-        );
+        })
+          .then(() => {
+            button.textContent = '✓';
+            button.setAttribute('aria-live', 'polite');
+            button.setAttribute('aria-label', '✓');
+            window.setTimeout(() => {
+              host?.remove();
+              host = undefined;
+              refresh();
+            }, 700);
+          })
+          .catch(() => undefined);
+      }
+      if (action === 'checkout') {
+        localStorage.setItem(`redeemind:checkout:${domain}`, 'true');
         host?.remove();
       }
       if (action === 'domain') {
@@ -160,9 +233,24 @@ function render(state: PageState): void {
 
 function refresh(): void {
   if (refreshTimer) clearTimeout(refreshTimer);
-  refreshTimer = setTimeout(() => {
+  refreshTimer = setTimeout(async () => {
     refreshTimer = undefined;
-    void requestState().then(render);
+    if (refreshInFlight) {
+      refreshQueued = true;
+      return;
+    }
+    refreshInFlight = true;
+    try {
+      render(await requestState());
+    } catch {
+      // A transient navigation or extension reload can invalidate the request.
+    } finally {
+      refreshInFlight = false;
+      if (refreshQueued) {
+        refreshQueued = false;
+        refresh();
+      }
+    }
   }, 150);
 }
 
@@ -194,5 +282,12 @@ function installNavigationHooks(): void {
   }).observe(document.documentElement, { childList: true, subtree: true });
 }
 
-installNavigationHooks();
-refresh();
+async function init(): Promise<void> {
+  i18n = await createI18n();
+  installNavigationHooks();
+  refresh();
+}
+
+void init().catch((error: unknown) => {
+  console.error('Failed to initialize content script', error);
+});

@@ -315,13 +315,17 @@
     "message": "Passende Gutscheine",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Beim Checkout erinnern",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Später erinnern (1 Stunde)",
-    "description": "Banner action."
+    "description": "Legacy banner action."
   },
   "remindDay": {
     "message": "Später erinnern (1 Tag)",
-    "description": "Banner action."
+    "description": "Legacy banner action."
   },
   "muteDomain": {
     "message": "Domain stummschalten",

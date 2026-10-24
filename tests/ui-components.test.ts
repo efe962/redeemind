@@ -15,6 +15,10 @@ describe('extension UI surfaces', () => {
     const form = document.querySelector('form');
     const submit = vi.fn();
     form?.addEventListener('submit', submit);
+    const toggle = document.querySelector<HTMLButtonElement>('#add-toggle');
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    const panel = document.querySelector<HTMLElement>('#add-panel');
+    if (panel) panel.hidden = false;
     fireEvent.input(getByRole(document.body, 'textbox', { name: 'Domain' }), {
       target: { value: 'example.com' },
     });

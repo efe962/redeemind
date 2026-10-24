@@ -9,7 +9,7 @@ export function renderVoucherText(
   const title = document.createElement('strong');
   title.textContent = voucher.title;
   const domain = document.createElement('span');
-  domain.textContent = voucher.domain;
+  domain.textContent = ` (${voucher.domain})`;
   container.append(title, domain);
   if (includeSensitive) {
     const note = document.createElement('span');

@@ -315,6 +315,10 @@
     "message": "Подходящие купоны",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Напомнить при оформлении заказа",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Напомнить позже (1 час)",
     "description": "Banner action."

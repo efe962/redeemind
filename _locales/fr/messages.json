@@ -315,6 +315,10 @@
     "message": "Bons correspondants",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Me rappeler lors du paiement",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Me le rappeler plus tard (1 heure)",
     "description": "Banner action."

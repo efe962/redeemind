@@ -94,8 +94,7 @@ export class VoucherStorage {
   public async list(): Promise<Voucher[]> {
     await this.migrate();
     const values = await this.area.get(null);
-    const fallbackValues =
-      !this.localOnly && Object.keys(values).length === 0 ? await this.fallback.get(null) : {};
+    const fallbackValues = !this.localOnly ? await this.fallback.get(null) : {};
     return this.parseValues({ ...fallbackValues, ...values });
   }
 

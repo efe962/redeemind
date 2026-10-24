@@ -11,6 +11,10 @@
         background: #f8fafc;
         color: #172033;
       }
+      .voucher > span {
+        min-width: 0;
+        overflow: hidden;
+      }
       @media (prefers-color-scheme: dark) {
         :root {
           background: #111827;
@@ -30,6 +34,9 @@
         margin: 0 0 12px;
       }
       section {
+        position: relative;
+        z-index: 1;
+        overflow: visible;
         background: color-mix(in srgb, Canvas 94%, #2563eb);
         border: 1px solid #cbd5e1;
         border-radius: 12px;
@@ -45,6 +52,8 @@
       input,
       select,
       button {
+        position: relative;
+        z-index: 2;
         font: inherit;
         padding: 8px;
         border-radius: 7px;
@@ -61,8 +70,16 @@
         color: inherit;
         border: 1px solid #94a3b8;
       }
+      .icon-button {
+        width: 36px;
+        min-width: 36px;
+        padding: 6px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
       .voucher {
         display: flex;
+        min-width: 0;
         justify-content: space-between;
         gap: 12px;
         align-items: center;
@@ -80,6 +97,11 @@
         color: #64748b;
         font-size: 0.85rem;
       }
+      .expiry-warning {
+        color: #b45309;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
       .row {
         display: flex;
         gap: 8px;
@@ -93,6 +115,21 @@
         margin-top: 8px;
         min-height: 1.2em;
       }
+      .disclosure {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: start;
+        background: transparent;
+        color: inherit;
+        border: 0;
+        padding: 0;
+      }
+      .disclosure-icon {
+        font-size: 1.25rem;
+        line-height: 1;
+      }
     </style>
   </head>
   <body>
@@ -100,34 +137,36 @@
       <h1 data-i18n="popupTitle">Vouchers for this site</h1>
       <section><div id="vouchers" aria-live="polite"></div></section>
       <section>
-        <h2 data-i18n="addVoucher">Add voucher</h2>
-        <form id="add-form">
-          <label><span data-i18n="domain">Domain</span><input name="domain" required /></label>
-          <label
-            ><span data-i18n="title">Titel</span><input name="title" required autofocus
-          /></label>
-          <label
-            ><span data-i18n="code">Code</span><input name="code" /><small data-i18n="codeHint"
-              >Hints such as “voucher in your account” are often enough.</small
-            ></label
-          >
-          <div class="row">
+        <button
+          id="add-toggle"
+          class="disclosure"
+          type="button"
+          aria-expanded="false"
+          aria-controls="add-panel"
+        >
+          <span data-i18n="addVoucher">Add voucher</span>
+          <span class="disclosure-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="add-panel" hidden>
+          <form id="add-form">
+            <label><span data-i18n="domain">Domain</span><input name="domain" required /></label>
             <label
-              ><span data-i18n="type">Typ</span
-              ><select name="type">
-                <option value="percent">%</option>
-                <option value="amount">€</option>
-                <option value="shipping" data-i18n="shipping">Versand</option>
-                <option value="other" data-i18n="other">Sonstiges</option>
-              </select></label
-            >
-            <label
-              ><span data-i18n="expiresAt">Ablaufdatum</span><input name="expiresAt" type="date"
+              ><span data-i18n="title">Titel</span><input name="title" required autofocus
             /></label>
-          </div>
-          <button type="submit" data-i18n="save">Speichern</button
-          ><output id="status" aria-live="polite"></output>
-        </form>
+            <label
+              ><span data-i18n="code">Code</span><input name="code" /><small data-i18n="codeHint"
+                >Hints such as “voucher in your account” are often enough.</small
+              ></label
+            >
+            <div class="row">
+              <label
+                ><span data-i18n="expiresAt">Ablaufdatum</span><input name="expiresAt" type="date"
+              /></label>
+            </div>
+            <button type="submit" data-i18n="save">Speichern</button>
+          </form>
+        </div>
+        <output id="status" aria-live="polite"></output>
       </section>
       <button id="options" class="secondary" data-i18n="options">Optionen öffnen</button>
     </main>

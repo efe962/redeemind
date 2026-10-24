@@ -315,6 +315,10 @@
     "message": "符合條件的優惠券",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "在結帳時提醒我",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "稍後提醒（1 小時）",
     "description": "Banner action."

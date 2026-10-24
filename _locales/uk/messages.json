@@ -315,6 +315,10 @@
     "message": "Відповідні купони",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Нагадати під час оформлення",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Нагадати пізніше (1 година)",
     "description": "Banner action."

@@ -315,6 +315,10 @@
     "message": "Passende vouchers",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Herinner me bij het afrekenen",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Herinner mij later (1 uur)",
     "description": "Banner action."

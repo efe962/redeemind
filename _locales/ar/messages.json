@@ -315,6 +315,10 @@
     "message": "القسائم المطابقة",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "ذكّرني عند الدفع",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "تذكيري لاحقًا (بعد ساعة)",
     "description": "Banner action."

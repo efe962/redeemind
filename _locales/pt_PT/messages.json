@@ -315,6 +315,10 @@
     "message": "Cupões correspondentes",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Lembrar no checkout",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Lembrar mais tarde (1 hora)",
     "description": "Banner action."

@@ -315,6 +315,10 @@
     "message": "該当するクーポン",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "チェックアウトで通知",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "後で通知（1時間）",
     "description": "Banner action."

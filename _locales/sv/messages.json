@@ -315,6 +315,10 @@
     "message": "Matchande kuponger",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Påminn mig i kassan",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Påminn mig senare (1 timme)",
     "description": "Banner action."

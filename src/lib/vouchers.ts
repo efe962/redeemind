@@ -13,6 +13,7 @@ export function createVoucher(input: VoucherInput, now = new Date()): Voucher {
   const timestamp = now.toISOString();
   return voucherSchema.parse({
     ...input,
+    type: undefined,
     id: input.id ?? nanoid(8),
     domain: normalizeDomain(input.domain),
     createdAt: timestamp,
@@ -28,6 +29,7 @@ export function updateVoucher(
   return voucherSchema.parse({
     ...voucher,
     ...changes,
+    type: undefined,
     domain: changes.domain ? normalizeDomain(changes.domain) : voucher.domain,
     updatedAt: now.toISOString(),
   });

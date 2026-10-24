@@ -24,11 +24,8 @@ export const LOCALES = [
 ] as const;
 export type Locale = (typeof LOCALES)[number];
 type Message = { message: string; description?: string; placeholders?: Record<string, unknown> };
-type Catalog = Record<string, Message>;
 
 const LOCALE_KEY = 'redeemind-locale';
-const catalogCache = new Map<Locale, Catalog>();
-
 function canonicalLocale(value: string): Locale | undefined {
   const normalized = value.replace('-', '_').toLowerCase();
   return LOCALES.find((locale) => locale.toLowerCase() === normalized);
@@ -46,18 +43,7 @@ function languageChain(selected: string | undefined, browserLanguage: string): L
   return result.length ? result : ['en'];
 }
 
-async function loadCatalog(locale: Locale): Promise<Catalog> {
-  const cached = catalogCache.get(locale);
-  if (cached) return cached;
-  const response = await fetch(browser.runtime.getURL(`_locales/${locale}/messages.json`));
-  if (!response.ok) throw new Error(`Unable to load locale ${locale}: ${response.status}`);
-  const catalog = (await response.json()) as Catalog;
-  catalogCache.set(locale, catalog);
-  return catalog;
-}
-
 export class I18n {
-  private catalog: Catalog = {};
   private locale: Locale = 'en';
   private browserLanguage = 'en';
   private selectedLocale?: Locale;
@@ -67,7 +53,7 @@ export class I18n {
     const stored = await browser.storage.local.get(LOCALE_KEY);
     const selected = typeof stored[LOCALE_KEY] === 'string' ? stored[LOCALE_KEY] : undefined;
     this.selectedLocale = selected ? canonicalLocale(selected) : undefined;
-    await this.setLocaleInternal(languageChain(selected, this.browserLanguage)[0] ?? 'en');
+    this.locale = languageChain(selected, this.browserLanguage)[0] ?? 'en';
   }
 
   async setLocale(locale: string | undefined): Promise<void> {
@@ -75,20 +61,7 @@ export class I18n {
     const selected = locale ? canonicalLocale(locale) : undefined;
     this.selectedLocale = selected;
     const resolved = languageChain(selected, this.browserLanguage)[0] ?? 'en';
-    await this.setLocaleInternal(resolved);
-  }
-
-  private async setLocaleInternal(locale: Locale): Promise<void> {
-    const chain = languageChain(locale, this.browserLanguage);
-    for (const candidate of chain) {
-      try {
-        this.catalog = await loadCatalog(candidate);
-        this.locale = candidate;
-        return;
-      } catch (error) {
-        if (candidate === chain[chain.length - 1]) throw error;
-      }
-    }
+    this.locale = resolved;
   }
 
   get currentLocale(): Locale {
@@ -100,13 +73,8 @@ export class I18n {
   }
 
   message(key: string, substitutions?: string | string[]): string {
-    const entry = this.catalog[key];
-    if (!entry?.message) return key;
-    const values = Array.isArray(substitutions) ? substitutions : [substitutions ?? ''];
-    return entry.message.replace(
-      /\$(\d+)\$/g,
-      (_, index: string) => values[Number(index) - 1] ?? '',
-    );
+    const value = browser.i18n?.getMessage?.(key, substitutions);
+    return value || key;
   }
 
   formatDate(value: Date | number): string {

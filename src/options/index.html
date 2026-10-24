@@ -90,7 +90,7 @@
       }
       .voucher {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto minmax(0, 1fr) auto;
         gap: 12px;
         align-items: center;
         padding: 12px 0;
@@ -108,18 +108,54 @@
         gap: 5px;
         flex-wrap: wrap;
       }
+      .icon-button {
+        width: 36px;
+        min-width: 36px;
+        padding: 6px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .code-row {
+        display: flex;
+        gap: 6px;
+        margin-top: 8px;
+      }
+      .code-row input {
+        min-width: 0;
+        flex: 1;
+        max-width: 220px;
+        text-overflow: ellipsis;
+      }
+      .status-badge {
+        display: inline-block;
+        margin-inline-start: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      .expiry-warning {
+        color: #b45309;
+        font-weight: 600;
+      }
       output {
         display: block;
         min-height: 1.2em;
         margin-top: 8px;
       }
       dialog {
-        max-width: 560px;
+        width: min(460px, calc(100vw - 32px));
+        max-width: calc(100vw - 32px);
+        box-sizing: border-box;
+        padding: 20px;
         border: 1px solid #94a3b8;
         border-radius: 12px;
+        position: relative;
+        z-index: 1000;
       }
       dialog::backdrop {
         background: #0008;
+      }
+      .actions .icon-button {
+        flex: 0 0 36px;
       }
       @media (max-width: 600px) {
         main {
@@ -141,8 +177,8 @@
         <div class="toolbar">
           <input id="search" type="search" data-i18n-placeholder="search" placeholder="Suchen" />
           <select id="filter" data-i18n-aria-label="filter">
+            <option value="active" data-i18n="active" selected>Active</option>
             <option value="all" data-i18n="all">All</option>
-            <option value="active" data-i18n="active">Active</option>
             <option value="expiringSoon" data-i18n="expiringSoon">Expiring soon</option>
             <option value="expired" data-i18n="expired">Expired</option>
             <option value="redeemed" data-i18n="redeemed">Redeemed</option>
@@ -162,6 +198,7 @@
           ><button id="bulk-delete" class="secondary" data-i18n="bulkDelete">
             Ausgewählte löschen
           </button>
+          <button id="delete-redeemed" class="secondary">Delete redeemed vouchers</button>
         </div>
         <div id="vouchers" aria-live="polite"></div>
       </section>
@@ -315,6 +352,28 @@
           <button id="apply-import" data-i18n="applyImport">Import übernehmen</button
           ><button id="cancel-import" class="secondary" data-i18n="cancel">Abbrechen</button>
         </div>
+      </dialog>
+      <dialog id="edit-dialog">
+        <h2 data-i18n="edit">Edit voucher</h2>
+        <form id="edit-form">
+          <label
+            ><span data-i18n="domain">Domain</span><input name="domain" required autocomplete="url"
+          /></label>
+          <label
+            ><span data-i18n="title">Title</span><input name="title" required maxlength="1000"
+          /></label>
+          <label><span data-i18n="code">Code</span><input name="code" autocomplete="off" /></label>
+          <label
+            ><span data-i18n="expiresAt">Expires</span><input name="expiresAt" type="date"
+          /></label>
+          <div class="row">
+            <button type="submit" data-i18n="save">Save</button>
+            <button id="cancel-edit" type="button" class="secondary" data-i18n="cancel">
+              Cancel
+            </button>
+          </div>
+          <output id="edit-status" aria-live="polite"></output>
+        </form>
       </dialog>
     </main>
     <script type="module" src="./index.ts"></script>

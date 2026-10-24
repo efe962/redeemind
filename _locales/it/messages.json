@@ -315,6 +315,10 @@
     "message": "Buoni corrispondenti",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Ricordamelo al checkout",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Ricordamelo più tardi (1 ora)",
     "description": "Banner action."

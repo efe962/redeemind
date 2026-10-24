@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-export const voucherTypeSchema = z.enum(['percent', 'amount', 'shipping', 'credit', 'other']);
 export const voucherStatusSchema = z.enum(['active', 'redeemed', 'archived']);
 
 export const voucherSchema = z.object({
@@ -9,7 +8,6 @@ export const voucherSchema = z.object({
   title: z.string().min(1),
   code: z.string().min(1).optional(),
   note: z.string().optional(),
-  type: voucherTypeSchema,
   value: z.number().finite().optional(),
   currency: z.string().length(3).toUpperCase().optional(),
   minOrderValue: z.number().finite().nonnegative().optional(),
@@ -19,7 +17,12 @@ export const voucherSchema = z.object({
   updatedAt: z.string().datetime({ offset: true }),
 });
 
-export type Voucher = z.infer<typeof voucherSchema>;
+type LegacyVoucherFields = {
+  /** Read-only compatibility for callers handling pre-0.1 records. */
+  type?: 'percent' | 'amount' | 'shipping' | 'credit' | 'other';
+};
+
+export type Voucher = z.infer<typeof voucherSchema> & LegacyVoucherFields;
 export type VoucherInput = Omit<Voucher, 'id' | 'createdAt' | 'updatedAt'> & {
   id?: string;
 };

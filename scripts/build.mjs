@@ -16,6 +16,7 @@ await build({
   build: {
     outDir,
     emptyOutDir: false,
+    target: target === 'chromium' ? 'chrome120' : 'es2022',
     rollupOptions: {
       input: {
         background: resolve(root, 'src/background/index.ts'),
@@ -26,6 +27,22 @@ await build({
       output: {
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
+      },
+    },
+  },
+});
+await build({
+  root,
+  build: {
+    outDir,
+    emptyOutDir: false,
+    target: target === 'chromium' ? 'chrome120' : 'es2022',
+    rollupOptions: {
+      input: resolve(root, 'src/content/index.ts'),
+      output: {
+        entryFileNames: 'assets/content.js',
+        inlineDynamicImports: true,
+        format: 'iife',
       },
     },
   },

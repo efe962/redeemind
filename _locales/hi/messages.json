@@ -315,6 +315,10 @@
     "message": "मिलते-जुलते कूपन",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "चेकआउट पर याद दिलाएं",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "बाद में याद दिलाएं (1 घंटा)",
     "description": "Banner action."

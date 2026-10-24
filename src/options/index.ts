@@ -1,5 +1,5 @@
 import browser from 'webextension-polyfill';
-import { hasVoucherCode, protectVoucherCode, VoucherCrypto } from '../lib/crypto';
+import { hasVoucherCode, protectVoucherCode, readVoucherCode, VoucherCrypto } from '../lib/crypto';
 import {
   exportCsv,
   exportJson,
@@ -18,6 +18,7 @@ import type { Voucher } from '../lib/schema';
 import { renderVoucherText } from '../lib/dom-render';
 import { VoucherStorage } from '../lib/storage';
 import { createI18n, localizedError, LOCALES } from '../lib/i18n';
+import { requestPassword } from '../lib/password-dialog';
 import {
   createVoucher,
   filterVouchers,
@@ -38,6 +39,20 @@ let pendingImport: ImportPreview | undefined;
 let settings: RedeemindSettings = DEFAULT_SETTINGS;
 const $ = <T extends Element>(selector: string) => document.querySelector<T>(selector);
 const msg = (key: string, substitutions?: string | string[]) => i18n.message(key, substitutions);
+function setCopyState(button: HTMLButtonElement, success: boolean): void {
+  const original = button.dataset.originalLabel ?? button.textContent ?? '';
+  button.dataset.originalLabel = original;
+  button.textContent = success ? '✓' : '×';
+  button.setAttribute('aria-live', 'polite');
+  button.setAttribute('aria-label', success ? '✓' : '×');
+  button.style.color = success ? '#15803d' : '#b91c1c';
+  window.setTimeout(() => {
+    button.textContent = original;
+    button.setAttribute('aria-label', msg('copyCode'));
+    button.removeAttribute('aria-live');
+    button.style.color = '';
+  }, 1800);
+}
 
 function localize(): void {
   document.documentElement.lang = i18n.currentLocale;
@@ -51,6 +66,8 @@ function localize(): void {
   document.querySelectorAll<HTMLElement>('[data-i18n-aria-label]').forEach((element) => {
     element.setAttribute('aria-label', msg(element.dataset.i18nAriaLabel ?? ''));
   });
+  const deleteRedeemed = $('#delete-redeemed');
+  if (deleteRedeemed) deleteRedeemed.textContent = `${msg('delete')} ${msg('redeemed')}`;
 }
 function selectedIds(): string[] {
   return Array.from(document.querySelectorAll<HTMLInputElement>('[data-select]:checked')).map(
@@ -62,7 +79,7 @@ function render(): void {
   const container = $('#vouchers');
   if (!container) return;
   const query = ($('#search') as HTMLInputElement)?.value.trim().toLowerCase() ?? '';
-  const filterValue = ($('#filter') as HTMLSelectElement)?.value ?? 'all';
+  const filterValue = ($('#filter') as HTMLSelectElement)?.value ?? 'active';
   const filter =
     filterValue === 'redeemed' ? 'all' : (filterValue as Parameters<typeof filterVouchers>[1]);
   const sort = ($('#sort') as HTMLSelectElement)?.value;
@@ -99,22 +116,53 @@ function render(): void {
     const details = document.createElement('div');
     const metadata = document.createElement('div');
     metadata.className = 'muted';
-    metadata.textContent = `${voucher.domain}${voucher.expiresAt ? ` · ${i18n.formatDate(new Date(voucher.expiresAt))}` : ''}${expired ? ` · ${msg('expired')}` : soon ? ` · ${msg('expiringSoon')}` : ''}`;
+    metadata.textContent = `${voucher.domain} · ${voucher.status === 'redeemed' ? msg('redeemed') : msg('active')}${voucher.expiresAt ? ` · ${i18n.formatDate(new Date(voucher.expiresAt))}` : ''}${expired ? ` · ${msg('expired')}` : ''}`;
+    if (soon) {
+      const warning = document.createElement('span');
+      warning.className = 'expiry-warning';
+      warning.textContent = ` · ${msg('expiringSoon')}`;
+      metadata.append(warning);
+    }
     renderVoucherText(details, voucher, false);
+    if (voucher.code) {
+      const codeRow = document.createElement('div');
+      codeRow.className = 'code-row';
+      const code = document.createElement('input');
+      code.type = 'password';
+      code.value = '••••••••';
+      code.readOnly = true;
+      code.dataset.code = voucher.id;
+      code.setAttribute('aria-label', msg('code'));
+      const copy = document.createElement('button');
+      copy.type = 'button';
+      copy.className = 'secondary icon-button';
+      copy.dataset.copyCode = voucher.id;
+      copy.textContent = '⧉';
+      copy.setAttribute('aria-label', msg('copyCode'));
+      copy.title = msg('copyCode');
+      codeRow.append(code, copy);
+      details.append(codeRow);
+    }
     details.append(metadata);
     const actions = document.createElement('div');
     actions.className = 'actions';
     for (const [action, label] of [
       ['edit', msg('edit')],
       ['duplicate', msg('duplicate')],
-      ['redeem', msg('markRedeemed')],
+      ['redeem', voucher.status === 'redeemed' ? msg('active') : msg('markRedeemed')],
       ['delete', msg('delete')],
     ] as const) {
       const button = document.createElement('button');
       button.dataset.action = action;
       button.dataset.id = voucher.id;
-      button.className = 'secondary';
-      button.textContent = label;
+      button.className =
+        action === 'redeem' || action === 'edit' || action === 'duplicate' || action === 'delete'
+          ? 'secondary icon-button'
+          : 'secondary';
+      button.textContent =
+        action === 'edit' ? '✎' : action === 'duplicate' ? '⧉' : action === 'delete' ? '🗑' : '✓';
+      button.setAttribute('aria-label', label);
+      button.title = label;
       actions.append(button);
     }
     item.append(checkbox, details, actions);
@@ -123,9 +171,16 @@ function render(): void {
 }
 
 async function refresh(): Promise<void> {
-  vouchers = await repository.list('all');
-  render();
-  await renderStorageStatus();
+  const container = $('#vouchers');
+  if (container) container.textContent = '...';
+  try {
+    vouchers = await repository.list('all');
+    render();
+    await renderStorageStatus();
+  } catch (error) {
+    if (container) container.textContent = localizedError(error, i18n);
+    throw error;
+  }
 }
 async function renderStorageStatus(): Promise<void> {
   const target = $('#storage-status');
@@ -135,6 +190,49 @@ async function renderStorageStatus(): Promise<void> {
     browser.storage.local.getBytesInUse?.(null),
   ]);
   target.textContent = `${msg('syncAvailable')}: ${syncBytes ?? 0} B · ${msg('localStorage')}: ${localBytes ?? 0} B · ${msg('voucherCount', String(vouchers.length))}`;
+}
+
+async function editVoucher(voucher: Voucher): Promise<void> {
+  const dialog = $('#edit-dialog') as HTMLDialogElement | null;
+  const form = $('#edit-form') as HTMLFormElement | null;
+  if (!dialog || !form) return;
+  (form.elements.namedItem('domain') as HTMLInputElement).value = voucher.domain;
+  (form.elements.namedItem('title') as HTMLInputElement).value = voucher.title;
+  (form.elements.namedItem('code') as HTMLInputElement).value = '';
+  if (voucher.code) {
+    try {
+      const password =
+        settings.encryptCodes && voucher.code.startsWith('{')
+          ? await requestPassword(
+              msg('passwordRequired'),
+              undefined,
+              async (value) => {
+                await readVoucherCode(voucher, cryptoService, value);
+              },
+              msg('errorInvalidPassword'),
+            )
+          : undefined;
+      const code = await readVoucherCode(voucher, cryptoService, password);
+      (form.elements.namedItem('code') as HTMLInputElement).value = code ?? '';
+    } catch (error) {
+      showError(error);
+      return;
+    }
+  }
+  (form.elements.namedItem('expiresAt') as HTMLInputElement).value = voucher.expiresAt
+    ? voucher.expiresAt.slice(0, 10)
+    : '';
+  dialog.dataset.id = voucher.id;
+  dialog.showModal();
+}
+
+function validateExpiry(value: string): string | undefined {
+  if (!value) return undefined;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error('Invalid expiry date');
+  const date = new Date(`${value}T23:59:59.000Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value)
+    throw new Error('Invalid expiry date');
+  return date.toISOString();
 }
 function download(filename: string, content: string, type: string): void {
   const url = URL.createObjectURL(new Blob([content], { type }));
@@ -199,6 +297,47 @@ $('#select-all')?.addEventListener('change', (event) => {
 });
 $('#vouchers')?.addEventListener('click', (event) => {
   const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-action]');
+  const copyButton = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-copy-code]');
+  if (copyButton) {
+    const id = copyButton.dataset.copyCode;
+    if (!id) return;
+    const copy = (password?: string) =>
+      browser.runtime
+        .sendMessage({ type: 'copyVoucherCode', id, password })
+        .then((code: unknown) => {
+          const input = document.querySelector<HTMLInputElement>(`[data-code="${id}"]`);
+          if (input) {
+            input.type = 'text';
+            input.value = String(code);
+          }
+          return navigator.clipboard.writeText(String(code));
+        });
+    void copy()
+      .then(() => {
+        setCopyState(copyButton, true);
+      })
+      .catch(async () => {
+        const password = await requestPassword(
+          msg('passwordRequired'),
+          undefined,
+          async (value) => {
+            await copy(value);
+          },
+          msg('errorInvalidPassword'),
+        );
+        if (password)
+          void copy(password)
+            .then(() => {
+              setCopyState(copyButton, true);
+            })
+            .catch((error: unknown) => {
+              setCopyState(copyButton, false);
+              showError(error);
+            });
+        else setCopyState(copyButton, false);
+      });
+    return;
+  }
   if (!button) return;
   const id = button.dataset.id;
   const voucher = vouchers.find((item) => item.id === id);
@@ -206,7 +345,10 @@ $('#vouchers')?.addEventListener('click', (event) => {
   void (async () => {
     const action = button.dataset.action;
     if (action === 'delete' && confirm(msg('confirmDelete'))) await repository.remove(id);
-    else if (action === 'redeem') await repository.update(id, { status: 'redeemed' });
+    else if (action === 'redeem')
+      await repository.update(id, {
+        status: voucher.status === 'redeemed' ? 'active' : 'redeemed',
+      });
     else if (action === 'duplicate')
       await repository.create({
         ...voucher,
@@ -214,16 +356,69 @@ $('#vouchers')?.addEventListener('click', (event) => {
         title: `${voucher.title}${msg('copySuffix')}`,
       });
     else if (action === 'edit') {
-      const title = prompt(msg('title'), voucher.title);
-      if (title) await repository.update(id, { title });
+      await editVoucher(voucher);
+      return;
     } else return;
     await storage.flush();
     await refresh();
+  })().catch(showError);
+});
+
+$('#edit-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const dialog = $('#edit-dialog') as HTMLDialogElement;
+  const form = event.currentTarget as HTMLFormElement;
+  const id = dialog.dataset.id;
+  const output = $('#edit-status');
+  if (!id) return;
+  void (async () => {
+    const domain = normalizeDomain(
+      String((form.elements.namedItem('domain') as HTMLInputElement).value).trim(),
+    );
+    const title = String((form.elements.namedItem('title') as HTMLInputElement).value).trim();
+    if (!title) throw new Error(msg('title'));
+    const code = String((form.elements.namedItem('code') as HTMLInputElement).value).trim();
+    const expiresAt = validateExpiry(
+      String((form.elements.namedItem('expiresAt') as HTMLInputElement).value),
+    );
+    const existing = vouchers.find((voucher) => voucher.id === id);
+    if (!existing) throw new Error(msg('errorVoucherNotFound'));
+    let password: string | undefined;
+    if (settings.encryptCodes && code) {
+      password = await requestPassword(
+        msg('passwordRequired'),
+        undefined,
+        undefined,
+        msg('errorInvalidPassword'),
+      );
+      if (!password) return;
+      await cryptoService.unlock(password);
+    }
+    const updated = await repository.update(id, {
+      domain,
+      title,
+      code: code || undefined,
+      expiresAt,
+    });
+    if (password) {
+      await storage.set(await protectVoucherCode(updated, cryptoService, password));
+    }
+    await storage.flush();
+    dialog.close();
+    if (output) output.textContent = msg('saved');
+    await refresh();
   })().catch((error: unknown) => {
-    const output = $('#import-status');
     if (output) output.textContent = localizedError(error, i18n);
   });
 });
+$('#cancel-edit')?.addEventListener('click', () => {
+  ($('#edit-dialog') as HTMLDialogElement).close();
+});
+
+function showError(error: unknown): void {
+  const output = $('#import-status');
+  if (output) output.textContent = localizedError(error, i18n);
+}
 for (const [selector, action] of [
   ['#bulk-redeem', 'redeem'],
   ['#bulk-delete', 'delete'],
@@ -239,6 +434,16 @@ for (const [selector, action] of [
       await refresh();
     })();
   });
+$('#delete-redeemed')?.addEventListener('click', () => {
+  if (!confirm(msg('confirmDelete'))) return;
+  void (async () => {
+    for (const voucher of vouchers) {
+      if (voucher.status === 'redeemed') await repository.remove(voucher.id);
+    }
+    await storage.flush();
+    await refresh();
+  })().catch(showError);
+});
 
 $('#settings-form')?.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -286,14 +491,37 @@ $('#security-form')?.addEventListener('submit', (event) => {
       (form.elements.namedItem('keyExpiryMinutes') as HTMLSelectElement).value,
     ) as RedeemindSettings['keyExpiryMinutes'];
     if (encryptCodes && !settings.encryptCodes) {
-      const password = window.prompt(msg('passwordRequired'));
+      const password = await requestPassword(
+        msg('passwordRequired'),
+        msg('confirmPassword'),
+        undefined,
+        msg('errorInvalidPassword'),
+        msg('passwordMismatch'),
+      );
       if (!password) return;
-      const confirmation = window.prompt(msg('confirmPassword'));
-      if (password !== confirmation) throw new Error(msg('passwordMismatch'));
       await cryptoService.createVerificationToken(password);
       for (const voucher of vouchers) {
         if (hasVoucherCode(voucher))
           await storage.set(await protectVoucherCode(voucher, cryptoService, password));
+      }
+      await storage.flush();
+    }
+    if (settings.encryptCodes && !encryptCodes) {
+      const password = await requestPassword(
+        msg('passwordRequired'),
+        undefined,
+        async (value) => {
+          await cryptoService.unlock(value);
+        },
+        msg('errorInvalidPassword'),
+      );
+      if (!password) return;
+      await cryptoService.unlock(password);
+      for (const voucher of vouchers) {
+        if (voucher.code && voucher.code.startsWith('{')) {
+          const code = await readVoucherCode(voucher, cryptoService, password);
+          await storage.set({ ...voucher, code });
+        }
       }
       await storage.flush();
     }
@@ -345,7 +573,12 @@ $('#apply-import')?.addEventListener('click', () => {
     if (!pendingImport) return;
     let password: string | undefined;
     if (settings.encryptCodes) {
-      password = window.prompt(msg('passwordRequired')) || undefined;
+      password = await requestPassword(
+        msg('passwordRequired'),
+        undefined,
+        undefined,
+        msg('errorInvalidPassword'),
+      );
       if (!password) return;
       await cryptoService.unlock(password);
     }
@@ -379,4 +612,4 @@ if (languageSelect) {
     if (option) option.textContent = msg(option.dataset.i18n ?? '');
   }
 }
-void Promise.all([loadSettings(), refresh()]);
+void Promise.all([loadSettings(), refresh()]).catch(showError);

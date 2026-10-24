@@ -315,6 +315,10 @@
     "message": "Kupon yang cocok",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Ingatkan saat pembayaran",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Ingatkan saya nanti (1 jam)",
     "description": "Banner action."

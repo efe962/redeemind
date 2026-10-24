@@ -315,6 +315,10 @@
     "message": "일치하는 쿠폰",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "결제할 때 알림",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "나중에 알림(1시간)",
     "description": "Banner action."

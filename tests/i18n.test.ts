@@ -1,8 +1,14 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 
 const browser = {
-  i18n: { getUILanguage: vi.fn(() => 'de-DE') },
-  runtime: { getURL: vi.fn((path: string) => `extension://${path}`) },
+  i18n: {
+    getUILanguage: vi.fn(() => 'de-DE'),
+    getMessage: vi.fn((key: string, substitutions?: string | string[]) => {
+      if (key !== 'greeting') return '';
+      const value = Array.isArray(substitutions) ? substitutions[0] : substitutions;
+      return `Hallo ${value ?? ''}`;
+    }),
+  },
   storage: {
     local: {
       get: vi.fn(async () => ({})),
@@ -14,21 +20,7 @@ const browser = {
 vi.mock('webextension-polyfill', () => ({ default: browser }));
 
 describe('i18n', () => {
-  beforeEach(() => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn(async (url: string) => {
-        if (url.includes('/de/')) {
-          return new Response(JSON.stringify({ greeting: { message: 'Hallo $1$' } }), {
-            status: 200,
-          });
-        }
-        return new Response(JSON.stringify({ greeting: { message: 'Hello $1$' } }), {
-          status: 200,
-        });
-      }),
-    );
-  });
+  beforeEach(() => vi.clearAllMocks());
   it('loads the browser locale, substitutes messages, and formats values', async () => {
     const { I18n } = await import('../src/lib/i18n');
     const i18n = new I18n();

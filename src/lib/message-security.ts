@@ -1,9 +1,12 @@
 import { z } from 'zod';
 
-const httpUrl = z
-  .string()
-  .url()
-  .refine((value) => /^https?:$/i.test(new URL(value).protocol));
+const httpUrl = z.string().refine((value) => {
+  try {
+    return /^https?:$/i.test(new URL(value).protocol);
+  } catch {
+    return false;
+  }
+}, 'Expected an HTTP or HTTPS URL');
 
 export const requestSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('getPageState'), url: httpUrl }).strict(),
@@ -31,7 +34,7 @@ export const requestSchema = z.discriminatedUnion('type', [
           domain: z.string().min(1).max(253),
           title: z.string().min(1).max(1000),
           code: z.string().min(1).max(1000).optional(),
-          type: z.enum(['percent', 'amount', 'shipping', 'credit', 'other']),
+          type: z.enum(['percent', 'amount', 'shipping', 'credit', 'other']).optional(),
           expiresAt: z.string().datetime({ offset: true }).optional(),
         })
         .strict(),

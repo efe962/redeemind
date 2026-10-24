@@ -315,6 +315,10 @@
     "message": "Pasujące kupony",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Przypomnij przy kasie",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Przypomnij później (1 godzina)",
     "description": "Banner action."

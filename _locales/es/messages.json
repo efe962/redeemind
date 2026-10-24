@@ -315,6 +315,10 @@
     "message": "Cupones disponibles",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Recordarme al finalizar la compra",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Recordar más tarde (1 hora)",
     "description": "Banner action."

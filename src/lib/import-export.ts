@@ -48,7 +48,6 @@ export function exportCsv(vouchers: Voucher[]): string {
     'title',
     'code',
     'note',
-    'type',
     'value',
     'currency',
     'minOrderValue',
@@ -74,7 +73,7 @@ export function parseCsvImport(text: string, existing: Voucher[] = []): ImportPr
   if (rows.length - 1 > MAX_IMPORT_VOUCHERS)
     throw new Error('Voucher export contains too many vouchers');
   const headers = rows[0];
-  const required = ['id', 'domain', 'title', 'type', 'status', 'createdAt', 'updatedAt'];
+  const required = ['id', 'domain', 'title', 'status', 'createdAt', 'updatedAt'];
   if (!headers || required.some((header) => !headers.includes(header))) {
     throw new Error('CSV header is missing required columns');
   }

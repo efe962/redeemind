@@ -315,6 +315,10 @@
     "message": "Uygun kuponlar",
     "description": "Content-script banner heading."
   },
+  "remindCheckout": {
+    "message": "Ödeme sırasında hatırlat",
+    "description": "Banner action."
+  },
   "remindHour": {
     "message": "Daha sonra hatırlat (1 saat)",
     "description": "Banner action."
