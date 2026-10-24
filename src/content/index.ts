@@ -71,15 +71,17 @@ function render(state: PageState): void {
     suppressed: isSuppressed(domain),
     displayMode: state.settings.displayMode,
     useDomHeuristic: state.settings.useDomHeuristic,
-    vouchers: state.vouchers.map(({ id, status, updatedAt, expiresAt, title, value, currency }) => ({
-      id,
-      status,
-      updatedAt,
-      expiresAt,
-      title,
-      value,
-      currency,
-    })),
+    vouchers: state.vouchers.map(
+      ({ id, status, updatedAt, expiresAt, title, value, currency }) => ({
+        id,
+        status,
+        updatedAt,
+        expiresAt,
+        title,
+        value,
+        currency,
+      }),
+    ),
   });
   if (renderKey === lastRenderKey) return;
   lastRenderKey = renderKey;
