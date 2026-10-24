@@ -57,48 +57,62 @@ function render(state: PageState): void {
   host = document.createElement('div');
   host.dataset.redeemind = 'true';
   const shadow = host.attachShadow({ mode: 'closed' });
-  shadow.innerHTML = `
-    <style>
-      :host { all: initial; }
-      .banner { position: fixed; z-index: 2147483647; inset-inline-end: 1rem; bottom: 1rem; width: min(24rem, calc(100vw - 2rem));
-        box-sizing: border-box; padding: 1rem; color: #111827; background: #fff; border: 2px solid #1d4ed8;
-        border-radius: .75rem; box-shadow: 0 8px 30px #0004; font: 14px system-ui, sans-serif; }
-      h2 { margin: 0 0 .5rem; font-size: 1.1rem; } p { margin: .35rem 0; } .actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-block-start: .8rem; }
-      button { border: 1px solid #1e3a8a; border-radius: .35rem; padding: .45rem .6rem; color: #fff; background: #1d4ed8; cursor: pointer; font: inherit; }
-      button.secondary { color: #1e3a8a; background: #eff6ff; } button:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
-      @media (prefers-reduced-motion: no-preference) { .banner { animation: enter .2s ease-out; } @keyframes enter { from { opacity: 0; transform: translateY(1rem); } } }
-    </style>
-    <aside class="banner" dir="${i18n.currentLocale === 'ar' ? 'rtl' : 'ltr'}" role="dialog" aria-labelledby="redeemind-title" aria-describedby="redeemind-details">
-      <h2 id="redeemind-title">${i18n.message('bannerTitle')}</h2>
-      <div id="redeemind-details"></div>
-      <div class="actions">
-        <button data-action="copy">${i18n.message('copyCode')}</button>
-        <button data-action="redeem">${i18n.message('markRedeemed')}</button>
-        <button class="secondary" data-action="hour">${i18n.message('remindHour')}</button>
-        <button class="secondary" data-action="day">${i18n.message('remindDay')}</button>
-        <button class="secondary" data-action="domain">${i18n.message('muteDomain')}</button>
-        <button class="secondary" data-action="close">${i18n.message('close')}</button>
-      </div>
-    </aside>`;
+  const style = document.createElement('style');
+  style.textContent = `
+    :host { all: initial; }
+    .banner { position: fixed; z-index: 2147483647; inset-inline-end: 1rem; bottom: 1rem; width: min(24rem, calc(100vw - 2rem));
+      box-sizing: border-box; padding: 1rem; color: #111827; background: #fff; border: 2px solid #1d4ed8;
+      border-radius: .75rem; box-shadow: 0 8px 30px #0004; font: 14px system-ui, sans-serif; }
+    h2 { margin: 0 0 .5rem; font-size: 1.1rem; } p { margin: .35rem 0; } .actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-block-start: .8rem; }
+    button { border: 1px solid #1e3a8a; border-radius: .35rem; padding: .45rem .6rem; color: #fff; background: #1d4ed8; cursor: pointer; font: inherit; }
+    button.secondary { color: #1e3a8a; background: #eff6ff; } button:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    @media (prefers-reduced-motion: no-preference) { .banner { animation: enter .2s ease-out; } @keyframes enter { from { opacity: 0; transform: translateY(1rem); } } }
+  `;
+  const aside = document.createElement('aside');
+  aside.className = 'banner';
+  aside.dir = i18n.currentLocale === 'ar' ? 'rtl' : 'ltr';
+  aside.setAttribute('role', 'dialog');
+  aside.setAttribute('aria-labelledby', 'redeemind-title');
+  aside.setAttribute('aria-describedby', 'redeemind-details');
+  const title = document.createElement('h2');
+  title.id = 'redeemind-title';
+  title.textContent = i18n.message('bannerTitle');
+  const details = document.createElement('div');
+  details.id = 'redeemind-details';
+  const actions = document.createElement('div');
+  actions.className = 'actions';
+  for (const [action, message, secondary] of [
+    ['copy', 'copyCode', false],
+    ['redeem', 'markRedeemed', false],
+    ['hour', 'remindHour', true],
+    ['day', 'remindDay', true],
+    ['domain', 'muteDomain', true],
+    ['close', 'close', true],
+  ] as const) {
+    const button = document.createElement('button');
+    button.dataset.action = action;
+    if (secondary) button.className = 'secondary';
+    button.textContent = i18n.message(message);
+    actions.append(button);
+  }
+  aside.append(title, details, actions);
+  shadow.append(style, aside);
   const first = state.vouchers[0];
   if (!first) return;
-  const details = shadow.querySelector('#redeemind-details');
-  if (details) {
-    for (const voucher of state.vouchers) {
-      const paragraph = document.createElement('p');
-      renderVoucherText(paragraph, voucher, false);
-      if (voucher.value !== undefined) {
-        const value =
-          voucher.type === 'percent'
-            ? `${i18n.formatNumber(voucher.value)}%`
-            : voucher.currency
-              ? i18n.formatCurrency(voucher.value, voucher.currency)
-              : i18n.formatNumber(voucher.value);
-        paragraph.append(`: ${value}`);
-      }
-      paragraph.append(document.createElement('br'), formatExpiry(voucher.expiresAt));
-      details.append(paragraph);
+  for (const voucher of state.vouchers) {
+    const paragraph = document.createElement('p');
+    renderVoucherText(paragraph, voucher, false);
+    if (voucher.value !== undefined) {
+      const value =
+        voucher.type === 'percent'
+          ? `${i18n.formatNumber(voucher.value)}%`
+          : voucher.currency
+            ? i18n.formatCurrency(voucher.value, voucher.currency)
+            : i18n.formatNumber(voucher.value);
+      paragraph.append(`: ${value}`);
     }
+    paragraph.append(document.createElement('br'), formatExpiry(voucher.expiresAt));
+    details.append(paragraph);
   }
   shadow.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
     button.addEventListener('click', () => {
