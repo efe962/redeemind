@@ -5,6 +5,10 @@ import { deflateRawSync } from 'node:zlib';
 const root = resolve(import.meta.dirname, '..');
 const packagesDir = resolve(root, 'dist', 'packages');
 const targets = ['chromium', 'firefox'];
+const requestedTarget = process.argv[2];
+if (requestedTarget && requestedTarget !== 'chromium') {
+  throw new Error('Usage: node scripts/package.mjs [chromium]');
+}
 
 const crcTable = new Uint32Array(256);
 for (let index = 0; index < 256; index++) {
@@ -48,7 +52,18 @@ async function createZip(sourceDir, destination) {
   const chunks = [];
   const centralDirectory = [];
   let offset = 0;
-  for (const file of (await filesIn(sourceDir)).sort()) {
+  const files = (await filesIn(sourceDir)).filter((file) => {
+    if (!requestedTarget) return true;
+    const name = relative(sourceDir, file).replaceAll('\\', '/');
+    return (
+      !name.endsWith('.map') &&
+      !name.includes('node_modules/') &&
+      !name.includes('coverage/') &&
+      !name.includes('reports/') &&
+      !/(^|\/)[^/]*(?:test|spec)[^/]*\.[^/]+$/i.test(name)
+    );
+  });
+  for (const file of files.sort()) {
     const data = await readFile(file);
     const compressed = deflateRawSync(data);
     const body = compressed.length < data.length ? compressed : data;
@@ -92,15 +107,21 @@ async function createZip(sourceDir, destination) {
   const centralSize = centralDirectory.reduce((size, chunk) => size + chunk.length, 0);
   const end = Buffer.alloc(22);
   end.writeUInt32LE(0x06054b50, 0);
-  end.writeUInt16LE(8, 8);
-  end.writeUInt16LE(8, 10);
+  end.writeUInt16LE(files.length, 8);
+  end.writeUInt16LE(files.length, 10);
   end.writeUInt32LE(centralSize, 12);
   end.writeUInt32LE(offset, 16);
   await writeFile(destination, Buffer.concat([...chunks, ...centralDirectory, end]));
 }
 
-await rm(packagesDir, { recursive: true, force: true });
-await mkdir(packagesDir, { recursive: true });
-for (const target of targets) {
-  await createZip(resolve(root, 'dist', target), resolve(packagesDir, `redeemind-${target}.zip`));
+if (!requestedTarget) {
+  await rm(packagesDir, { recursive: true, force: true });
+  await mkdir(packagesDir, { recursive: true });
+}
+const targetsToPackage = requestedTarget ? [requestedTarget] : targets;
+for (const target of targetsToPackage) {
+  const destination = requestedTarget
+    ? resolve(root, `redeemind-${target}.zip`)
+    : resolve(packagesDir, `redeemind-${target}.zip`);
+  await createZip(resolve(root, 'dist', target), destination);
 }

@@ -25,6 +25,20 @@ npm run package
 - `dist/packages/redeemind-firefox.zip` for Firefox Desktop and Firefox for
   Android.
 
+To create and verify the Chromium/Edge upload package in the repository root
+on Windows PowerShell:
+
+```powershell
+npm run package:chromium
+npm run verify:chromium
+Expand-Archive -Path .\redeemind-chromium.zip -DestinationPath .\zip-test -Force
+Get-ChildItem .\zip-test
+```
+
+The final command lists `manifest.json` directly in `zip-test`; the archive
+does not contain an extra `chromium` or `dist` wrapper directory. The package
+is built from `dist/chromium`, which contains the Chromium extension output.
+
 For a local Chromium installation, enable Developer mode at
 `chrome://extensions` or `edge://extensions`, choose **Load unpacked**, and
 select `dist/chromium`.

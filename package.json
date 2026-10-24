@@ -9,6 +9,8 @@
     "build:chromium": "node scripts/build.mjs chromium",
     "build:firefox": "node scripts/build.mjs firefox",
     "package": "npm run build && node scripts/package.mjs",
+    "package:chromium": "npm run build:chromium && node scripts/package.mjs chromium",
+    "verify:chromium": "node scripts/verify-chromium.mjs",
     "dev": "vite",
     "lint": "eslint .",
     "check:locales": "vite-node scripts/check-locales.ts",
