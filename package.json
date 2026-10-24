@@ -32,7 +32,7 @@
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^7.0.1",
     "@types/chrome": "^0.0.270",
-    "@types/node": "^22.7.4",
+    "@types/node": "^26.6.5",
     "@vitest/coverage-v8": "^2.1.9",
     "eslint": "^9.12.0",
     "eslint-config-prettier": "^9.1.0",
