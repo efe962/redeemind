@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Напоминает о сохранённых купонах во время покупок в интернете.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Купоны для этого сайта",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Добавить купон",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Домен",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Название",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Код",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Тип",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Срок действия",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Сохранить",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Сохранено.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Открыть настройки",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Для этого домена нет действующих купонов.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Купоны",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Поиск",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Фильтр",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Все",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Активные",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Скоро истекают",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Истёкшие",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Использованные",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Сортировка",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Сначала новые",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Дата окончания",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Сортировать по домену",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Изменить",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Удалить",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Дублировать",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Отметить как использованный",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Удалить выбранные",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Отметить выбранные как использованные",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Настройки",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Режим отображения",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Всегда",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Корзина/оформление заказа",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Только значок",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Время предупреждения об окончании",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Уведомления",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Тема",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Системная",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Светлая",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Тёмная",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Исключённые домены",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Исключить домен",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Хранилище и синхронизация",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Синхронизация активна",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Локальный резервный вариант",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Экспортировать",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Импортировать",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Предпросмотр импорта",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 купонов, $2 дубликата, $3 недопустимых строк",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Применить импорт",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Отмена",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Выбрать все",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Настройки сохранены.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Импорт / экспорт",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Экспортировать CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Определить поля купона",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Архивировать истёкшие купоны",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 купонов",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (копия)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Подсказки вроде «купон в вашем аккаунте» часто достаточны.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Копировать код",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Требуется пароль",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Подтвердить мастер-пароль",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Пароли не совпадают.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Безопасность",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Зашифровать коды мастер-паролем",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Если вы забудете пароль, зашифрованные коды восстановить нельзя.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Срок действия ключа",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Хранить только локально (без синхронизации браузера)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind не отправляет данные на собственные серверы; безопасность синхронизированных данных зависит от вашего аккаунта браузера.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Доставка",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Другое",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Подходящие купоны",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Напомнить позже (1 час)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Напомнить позже (1 день)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Скрыть этот домен",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Закрыть",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Без даты окончания",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Действителен до $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: купоны скоро истекают",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "Срок действия $1 купонов скоро истечёт.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Добавить купон для этой страницы",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Язык",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Автоматически (язык браузера)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Английский",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Немецкий",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Испанский",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Французский",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Португальский (Бразилия)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Португальский (Португалия)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Итальянский",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Нидерландский",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Польский",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Русский",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Турецкий",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Японский",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Корейский",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Китайский (упрощённый)",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Китайский (традиционный)",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Хинди",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Арабский",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Индонезийский",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Украинский",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Шведский",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 день",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 дня",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 минут",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 час",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 часов",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Удалить этот купон?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Купон не найден.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "У этого купона нет кода.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Требуется пароль.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Неверный пароль или зашифрованное значение.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Требуется разблокировка.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Недопустимый экспорт купонов.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Для зашифрованного импорта требуется пароль.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Неподдерживаемая версия зашифрованного значения.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Этот купон превышает лимит хранилища.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Квота хранилища превышена.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "Экспорт CSV должен содержать заголовок и хотя бы одну строку.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "В заголовке CSV отсутствуют обязательные столбцы.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "В CSV есть незавершённое поле в кавычках.",
+    "description": "Error message."
+  }
+}

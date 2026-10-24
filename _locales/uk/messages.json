@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Нагадує про збережені купони під час онлайн-покупок.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Купони для цього сайту",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Додати купон",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Домен",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Назва",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Код",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Тип",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Завершення дії",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Зберегти",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Збережено.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Відкрити налаштування",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Для цього домену немає дійсних купонів.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Усі купони",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Пошук",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Фільтр",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Усі",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Активні",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Скоро закінчаться",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Прострочені",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Використані",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Сортувати",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Спочатку нові",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Дата завершення",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Сортувати за доменом",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Редагувати",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Видалити",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Дублювати",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Позначити як використаний",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Видалити вибрані",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Позначити вибрані як використані",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Налаштування",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Режим відображення",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Завжди",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Кошик/оформлення замовлення",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Лише значок",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Попередження про завершення",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Сповіщення",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Тема",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Системна",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Світла",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Темна",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Виключені домени",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Виключити домен",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Сховище й синхронізація",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Синхронізацію увімкнено",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Локальна резервна копія",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Експортувати",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Імпортувати",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Попередній перегляд імпорту",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 купонів, $2 дублікатів, $3 недійсних рядків",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Застосувати імпорт",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Скасувати",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Вибрати все",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Налаштування збережено.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Імпорт / експорт",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Експортувати CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Визначати поля купона",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Архівувати прострочені купони",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 купонів",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (копія)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Примітки на кшталт «купон у вашому обліковому записі» часто достатньо.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Копіювати код",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Потрібен пароль",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Підтвердити головний пароль",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Паролі не збігаються.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Безпека",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Шифрувати коди головним паролем",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Якщо ви забудете пароль, зашифровані коди неможливо відновити.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Ключ дійсний протягом",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Зберігати лише локально (без синхронізації браузера)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind не надсилає дані на власні сервери; безпека синхронізованих даних залежить від вашого облікового запису браузера.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Доставка",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Інше",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Відповідні купони",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Нагадати пізніше (1 година)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Нагадати пізніше (1 день)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Приховати цей домен",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Закрити",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Без дати завершення",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Дійсний до $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: купони скоро закінчаться",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "Термін дії $1 купонів скоро закінчиться.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Додати купон для цієї сторінки",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Мова",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Автоматично (мова браузера)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Англійська",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Німецька",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Іспанська",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Французька",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Португальська (Бразилія)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Португальська (Португалія)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Італійська",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Нідерландська",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Польська",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Російська",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Турецька",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Японська",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Корейська",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Китайська (спрощена)",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Китайська (традиційна)",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Гінді",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Арабська",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Індонезійська",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Українська",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Шведська",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 день",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 днів",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 хвилин",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 година",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 годин",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Видалити цей купон?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Купон не знайдено.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "У цього купона немає коду.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Потрібен пароль.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Недійсний пароль або зашифроване значення.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Потрібно розблокувати.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Недійсний експорт купонів.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Для зашифрованого імпорту потрібен пароль.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Версія зашифрованого значення не підтримується.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Цей купон перевищує ліміт сховища.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Ліміт сховища перевищено.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "Експорт CSV має містити заголовок і принаймні один рядок.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "У заголовку CSV бракує обов’язкових стовпців.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV містить незавершене поле в лапках.",
+    "description": "Error message."
+  }
+}

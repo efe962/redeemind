@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Mengingatkan Anda tentang kupon yang cocok saat berbelanja online.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Kupon untuk situs ini",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Tambah kupon",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Domain",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Judul",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Kode",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Jenis",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Berakhir pada",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Simpan",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Tersimpan",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Buka opsi",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Tidak ada kupon yang sah untuk domain ini.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Semua kupon",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Cari",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Saring",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Semua",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Aktif",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Segera kedaluwarsa",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Kedaluwarsa",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Telah digunakan",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Urutkan",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Terbaru dahulu",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Tanggal kedaluwarsa",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Urutkan berdasarkan domain",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Sunting",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Hapus",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Duplikat",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Tandai sebagai telah digunakan",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Hapus yang dipilih",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Tandai yang dipilih sebagai telah digunakan",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Pengaturan",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Tampilan",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Selalu",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Keranjang/pembayaran",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Hanya lencana",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Waktu pengingat sebelum kedaluwarsa",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Notifikasi",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Tema",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Sistem",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Terang",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Gelap",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Domain yang dikecualikan",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Kecualikan domain",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Penyimpanan dan sinkronisasi",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Sinkronisasi aktif",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Penyimpanan lokal sebagai cadangan",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Ekspor",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Impor",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Pratinjau impor",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 kupon baru, $2 duplikat, $3 baris tidak valid",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Terapkan impor",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Batal",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Pilih semua",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Pengaturan tersimpan.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Impor / Ekspor",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Ekspor CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Deteksi kolom kupon",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Arsipkan kupon yang kedaluwarsa",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 kupon",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (salinan)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Petunjuk seperti “kupon di akun Anda” sering kali sudah cukup.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Salin kode",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Kata sandi diperlukan",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Konfirmasi kata sandi utama",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Kata sandi tidak cocok.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Keamanan",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Enkripsi kode dengan kata sandi utama",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Jika lupa kata sandi, kode terenkripsi tidak dapat dipulihkan.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Kunci kedaluwarsa setelah",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Simpan hanya secara lokal (tanpa sinkronisasi peramban)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind tidak mengirim apa pun ke servernya sendiri. Keamanan data yang disinkronkan bergantung pada akun peramban Anda, misalnya 2FA dan frasa sandi sinkronisasi.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Pengiriman",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Lainnya",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Kupon yang cocok",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Ingatkan saya nanti (1 jam)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Ingatkan saya nanti (1 hari)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Bisukan domain ini",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Tutup",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Tanpa tanggal kedaluwarsa",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Berlaku hingga $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: kupon segera kedaluwarsa",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 kupon akan segera kedaluwarsa.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Tambah kupon untuk halaman ini",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Bahasa",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Otomatis (bahasa peramban)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Inggris",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Jerman",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Spanyol",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Prancis",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Portugis (Brasil)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Portugis (Portugal)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Italia",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Belanda",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Polandia",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Rusia",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Turki",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Jepang",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Korea",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Tionghoa Sederhana",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Tionghoa Tradisional",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hindi",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Arab",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Indonesia",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Ukraina",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Swedia",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 hari",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 hari kalender",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 menit",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 jam",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 jam penuh",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Hapus kupon ini?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Kupon tidak ditemukan.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Kupon ini tidak memiliki kode.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Kata sandi diperlukan.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Kata sandi atau nilai terenkripsi tidak sah.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Pembukaan kunci diperlukan.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Ekspor kupon tidak sah.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Kata sandi diperlukan untuk impor terenkripsi.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Versi nilai terenkripsi tidak didukung.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Kupon ini melebihi batas penyimpanan.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Kuota penyimpanan terlampaui.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "Ekspor CSV harus memiliki header dan setidaknya satu baris.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "Header CSV tidak memiliki kolom wajib.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV memiliki bidang kutipan yang belum ditutup.",
+    "description": "Error message."
+  }
+}

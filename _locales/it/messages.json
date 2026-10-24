@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Ti ricorda i buoni e i codici promozionali durante gli acquisti online.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Buoni per questo sito",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Aggiungi buono",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Dominio",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Titolo",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Codice",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Tipo",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Scade il",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Salva",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Salvato.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Apri impostazioni",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Nessun buono valido per questo dominio.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Tutti i buoni",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Cerca",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Filtro",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Tutti",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Attivi",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "In scadenza",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Scaduti",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Utilizzati",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Ordina",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Prima i più recenti",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Data di scadenza",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Ordina per dominio",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Modifica",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Elimina",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Duplica",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Segna come utilizzato",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Elimina selezionati",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Contrassegna i selezionati come utilizzati",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Impostazioni",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Modalità di visualizzazione",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Sempre",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Carrello/pagamento",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Solo etichetta",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Anticipo del promemoria di scadenza",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Notifiche",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Tema",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Sistema",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Chiaro",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Scuro",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Domini esclusi",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Escludi dominio",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Archiviazione e sincronizzazione",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Sincronizzazione attiva",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Fallback locale",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Esporta",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Importa",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Anteprima importazione",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 coupon, $2 duplicati, $3 righe non valide",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Applica importazione",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Annulla",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Seleziona tutto",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Impostazioni salvate.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Importazione / esportazione",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Esporta CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Rileva campi del buono",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Archivia buoni scaduti",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 buoni",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (copia)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Spesso basta un suggerimento come «buono nel tuo account».",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Copia codice",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Password obbligatoria",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Conferma password principale",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Le password non coincidono.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Sicurezza",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Crittografa i codici con una password principale",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Se dimentichi la password, i codici crittografati non possono essere recuperati.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "La chiave scade dopo",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Archivia solo localmente (senza sincronizzazione del browser)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind non invia dati ai propri server. La sicurezza dei dati sincronizzati dipende dall’account del browser, ad esempio dalla 2FA e da una passphrase di sincronizzazione.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Spedizione",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Altro",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Buoni corrispondenti",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Ricordamelo più tardi (1 ora)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Ricordamelo più tardi (1 giorno)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Silenzia questo dominio",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Chiudi",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Nessuna data di scadenza",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Valido fino al $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: buoni in scadenza",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 buoni stanno per scadere.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Aggiungi buono per questa pagina",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Lingua",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Automatico (lingua del browser)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Inglese",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Tedesco",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Spagnolo",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Francese",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Portoghese (Brasile)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Portoghese (Portogallo)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Italiano",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Olandese",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Polacco",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Russo",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Turco",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Giapponese",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Coreano",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Cinese semplificato",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Cinese tradizionale",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hindi",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Arabo",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Indonesiano",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Ucraino",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Svedese",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 giorno",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 giorni",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 minuti",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 ora",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 ore",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Eliminare questo buono?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Buono non trovato.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Questo buono non contiene un codice.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "È necessaria una password.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Password o valore crittografato non valido.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "È necessario sbloccare.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Esportazione dei buoni non valida.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Per l’importazione crittografata è necessaria una password.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Versione del valore crittografato non supportata.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Questo buono supera il limite di archiviazione.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Quota di archiviazione superata.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "L’esportazione CSV deve contenere un’intestazione e almeno una riga.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "Nell’intestazione CSV mancano colonne obbligatorie.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "Il CSV contiene un campo tra virgolette non terminato.",
+    "description": "Error message."
+  }
+}

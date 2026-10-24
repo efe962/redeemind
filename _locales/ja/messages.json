@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "オンラインショッピング中に保存したクーポンを知らせます。",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "このサイトのクーポン",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "クーポンを追加",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "ドメイン",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "タイトル",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "コード",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "種類",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "期限",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "保存",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "保存しました。",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "設定を開く",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "このドメインに有効なクーポンはありません。",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "すべてのクーポン",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "検索",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "フィルター",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "すべて",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "有効",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "まもなく期限切れ",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "期限切れ",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "使用済み",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "並べ替え",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "新しい順",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "有効期限",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "ドメイン順",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "編集",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "削除",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "複製",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "使用済みとしてマーク",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "選択項目を削除",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "選択項目を使用済みとしてマーク",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "設定",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "表示モード",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "常に表示",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "カート／チェックアウト",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "バッジのみ",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "期限切れ前の通知時間",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "通知",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "テーマ",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "システム設定",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "ライト",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "ダーク",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "除外するドメイン",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "ドメインを除外",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "ストレージと同期",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "同期が有効",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "ローカル保存（予備）",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "エクスポート",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "インポート",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "インポートのプレビュー",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1件のクーポン、重複 $2件、無効な行 $3件",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "インポートを適用",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "キャンセル",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "すべて選択",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "設定を保存しました。",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "インポート／エクスポート",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "CSV をエクスポート",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "クーポン項目を検出",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "期限切れクーポンをアーカイブ",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 件のクーポン",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (コピー)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "「アカウント内のクーポン」などのヒントで十分な場合があります。",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "コードをコピー",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "パスワードが必要です",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "マスターパスワードを確認",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "パスワードが一致しません。",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "セキュリティ",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "マスターパスワードでコードを暗号化",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "パスワードを忘れると、暗号化したコードを復元できません。",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "キーの有効期限",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "ローカルにのみ保存（ブラウザ同期なし）",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind は独自のサーバーにデータを送信しません。同期データの安全性は、2 段階認証や同期パスフレーズなど、ブラウザアカウントの設定に依存します。",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "配送",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "その他",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "該当するクーポン",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "後で通知（1時間）",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "後で通知（1日）",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "このドメインをミュート",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "閉じる",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "有効期限なし",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "$1 まで有効",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind：まもなく期限切れのクーポン",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 件のクーポンの有効期限がまもなく切れます。",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "このページにクーポンを追加",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "言語",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "自動（ブラウザの言語）",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "英語",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "ドイツ語",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "スペイン語",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "フランス語",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "ポルトガル語（ブラジル）",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "ポルトガル語（ポルトガル）",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "イタリア語",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "オランダ語",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "ポーランド語",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "ロシア語",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "トルコ語",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "日本語",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "韓国語",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "中国語（簡体字）",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "中国語（繁体字）",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "ヒンディー語",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "アラビア語",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "インドネシア語",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "ウクライナ語",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "スウェーデン語",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 日",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 日間",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 分",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 時間",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 時間分",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "このクーポンを削除しますか？",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "クーポンが見つかりません。",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "このクーポンにはコードがありません。",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "パスワードが必要です。",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "パスワードまたは暗号化された値が無効です。",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "ロック解除が必要です。",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "クーポンのエクスポートが無効です。",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "暗号化されたインポートにはパスワードが必要です。",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "暗号化された値のバージョンはサポートされていません。",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "このクーポンはストレージの上限を超えています。",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "ストレージ容量を超えました。",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "CSV のエクスポートにはヘッダーと 1 行以上のデータが必要です。",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "CSV ヘッダーに必須列がありません。",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV に閉じられていない引用符付きフィールドがあります。",
+    "description": "Error message."
+  }
+}

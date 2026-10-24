@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Vous rappelle vos bons et codes promotionnels pendant vos achats en ligne.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Bons pour ce site",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Ajouter bon",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Domaine",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Titre",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Code",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Nature",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Expire",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Enregistrer",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Enregistré.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Ouvrir les options",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Aucun bon valide pour ce domaine.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Bons",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Rechercher",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Filtrer",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Tous",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Actifs",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Expirent bientôt",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Expirés",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Utilisés",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Trier",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Plus récents en premier",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Date d’expiration",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Trier par domaine",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Modifier",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Supprimer",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Dupliquer",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Marquer comme utilisé",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Supprimer sélectionnés",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Marquer les sélectionnés comme utilisés",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Paramètres",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Mode d’affichage",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Toujours",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Panier/paiement",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Badge uniquement",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Délai avant expiration",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Alertes",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Thème",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Système",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Clair",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Sombre",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Domaines exclus",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Exclure le domaine",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Stockage et synchronisation",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Synchronisation active",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Stockage local",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Exporter",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Importer",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Aperçu de l’importation",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 bons, $2 doublons, $3 lignes invalides",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Appliquer l’importation",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Annuler",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Tout sélectionner",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Paramètres enregistrés.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Importer / Exporter",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Exporter CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Détecter les champs de bon",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Archiver les bons expirés",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 bons",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (copie)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Une indication comme « bon dans votre compte » suffit souvent.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Copier le code",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Mot de passe requis",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Confirmer le mot de passe principal",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Les mots de passe ne correspondent pas.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Sécurité",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Chiffrer les codes avec un mot de passe principal",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Si vous oubliez votre mot de passe, les codes chiffrés sont irrécupérables.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "La clé expire après",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Stocker uniquement en local (sans synchronisation du navigateur)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind n’envoie rien à ses serveurs ; la sécurité dépend de votre compte de navigateur.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Livraison",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Autre",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Bons correspondants",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Me le rappeler plus tard (1 heure)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Me le rappeler plus tard (1 jour)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Masquer le domaine",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Fermer",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Aucune date d’expiration",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Valide jusqu’au $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind : bons bientôt expirés",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 bons expirent bientôt.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Ajouter un bon pour ce site",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Langue",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Automatique (langue du navigateur)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Anglais",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Allemand",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Espagnol",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Français",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Portugais (Brésil)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Portugais (Portugal)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Italien",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Néerlandais",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Polonais",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Russe",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Turc",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Japonais",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Coréen",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Chinois (simplifié)",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Chinois (traditionnel)",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hindi",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Arabe",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Indonésien",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Ukrainien",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Suédois",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 jour",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 jours",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 min",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 heure",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 heures",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Supprimer ce bon ?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Bon introuvable.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Ce bon ne contient aucun code.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Un mot de passe est requis.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Mot de passe ou valeur chiffrée invalide.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Déverrouillage requis.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Export de bons invalide.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Un mot de passe est requis pour importer des données chiffrées.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Version de valeur chiffrée non prise en charge.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Ce bon dépasse la limite de stockage.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Quota de stockage dépassé.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "L’export CSV doit contenir un en-tête et au moins une ligne.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "Des colonnes obligatoires manquent dans l’en-tête CSV.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "Le CSV contient des guillemets non fermés.",
+    "description": "Error message."
+  }
+}

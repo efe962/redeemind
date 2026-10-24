@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "ऑनलाइन खरीदारी करते समय मिलते-जुलते कूपन याद दिलाता है।",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "इस साइट के कूपन",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "कूपन जोड़ें",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "डोमेन",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "शीर्षक",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "कोड",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "प्रकार",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "समाप्ति",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "सहेजें",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "सहेजा गया",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "विकल्प खोलें",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "इस डोमेन के लिए कोई मान्य कूपन नहीं हैं।",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "सभी कूपन",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "खोजें",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "फ़िल्टर",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "सभी",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "सक्रिय",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "जल्द समाप्त होने वाले",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "समाप्त",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "रिडीम किए गए",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "क्रमबद्ध करें",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "नवीनतम पहले",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "समाप्ति तिथि",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "डोमेन के अनुसार",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "संपादित करें",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "हटाएं",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "डुप्लिकेट करें",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "रिडीम किया गया के रूप में चिह्नित करें",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "चयनित हटाएं",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "चयनित को रिडीम किया गया चिह्नित करें",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "सेटिंग",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "प्रदर्शन मोड",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "हमेशा",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "कार्ट/चेकआउट",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "केवल बैज",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "समाप्ति से पहले याद दिलाने का समय",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "सूचनाएं",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "थीम",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "सिस्टम",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "हल्का",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "गहरा",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "बहिष्कृत डोमेन",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "डोमेन बहिष्कृत करें",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "स्टोरेज और सिंक",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "सिंक सक्रिय",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "स्थानीय फ़ॉलबैक",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "निर्यात",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "आयात",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "आयात का पूर्वावलोकन",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 नए कूपन, $2 डुप्लिकेट, $3 अमान्य पंक्तियां",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "आयात लागू करें",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "रद्द करें",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "सभी चुनें",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "सेटिंग सहेजी गई।",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "आयात / निर्यात",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "CSV निर्यात करें",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "कूपन फ़ील्ड पहचानें",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "समाप्त कूपन संग्रहित करें",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 कूपन",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (प्रतिलिपि)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "“आपके खाते में कूपन” जैसे संकेत अक्सर पर्याप्त होते हैं।",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "कोड कॉपी करें",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "पासवर्ड आवश्यक है",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "मुख्य पासवर्ड की पुष्टि करें",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "पासवर्ड मेल नहीं खाते।",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "सुरक्षा",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "मुख्य पासवर्ड से कोड एन्क्रिप्ट करें",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "पासवर्ड भूल जाने पर एन्क्रिप्ट किए गए कोड पुनर्प्राप्त नहीं किए जा सकते।",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "कुंजी की समय सीमा",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "केवल स्थानीय रूप से संग्रहीत करें (ब्राउज़र सिंक नहीं)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind अपने सर्वर पर कुछ नहीं भेजता। सिंक किए गए डेटा की सुरक्षा आपके ब्राउज़र खाते, जैसे 2FA और सिंक पासफ़्रेज़, पर निर्भर करती है।",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "शिपिंग",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "अन्य",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "मिलते-जुलते कूपन",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "बाद में याद दिलाएं (1 घंटा)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "बाद में याद दिलाएं (1 दिन)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "इस डोमेन को म्यूट करें",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "बंद करें",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "समाप्ति तिथि नहीं",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "$1 तक मान्य",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: जल्द समाप्त होने वाले कूपन",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 कूपन जल्द समाप्त होने वाले हैं।",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "इस पेज के लिए कूपन जोड़ें",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "भाषा",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "स्वचालित (ब्राउज़र भाषा)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "अंग्रेज़ी",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "जर्मन",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "स्पेनिश",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "फ़्रेंच",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "पुर्तगाली (ब्राज़ील)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "पुर्तगाली (पुर्तगाल)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "इतालवी",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "डच",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "पोलिश",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "रूसी",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "तुर्की",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "जापानी",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "कोरियाई",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "चीनी (सरल)",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "चीनी (पारंपरिक)",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "हिन्दी",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "अरबी",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "इंडोनेशियाई",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "यूक्रेनी",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "स्वीडिश",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 दिन",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 दिनों",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 मिनट",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 घंटा",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 घंटे",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "क्या यह कूपन हटाना है?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "कूपन नहीं मिला।",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "इस कूपन में कोई कोड नहीं है।",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "पासवर्ड आवश्यक है।",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "अमान्य पासवर्ड या एन्क्रिप्ट किया गया मान।",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "अनलॉक आवश्यक है।",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "अमान्य कूपन निर्यात।",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "एन्क्रिप्ट किए गए आयात के लिए पासवर्ड आवश्यक है।",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "एन्क्रिप्ट किए गए मान का संस्करण समर्थित नहीं है।",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "यह कूपन स्टोरेज सीमा से अधिक है।",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "स्टोरेज कोटा समाप्त हो गया।",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "CSV निर्यात में शीर्षक और कम से कम एक पंक्ति होनी चाहिए।",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "CSV शीर्षक में आवश्यक कॉलम नहीं हैं।",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV में बिना बंद किया गया उद्धृत फ़ील्ड है।",
+    "description": "Error message."
+  }
+}

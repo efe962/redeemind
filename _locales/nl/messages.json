@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Herinnert je aan opgeslagen vouchers tijdens het online winkelen.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Vouchers voor deze website",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Voucher toevoegen",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Domein",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Titel",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Code",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Soort",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Verloopt",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Opslaan",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Opgeslagen.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Opties openen",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Geen geldige vouchers voor dit domein.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Alle vouchers",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Zoeken",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Filteren",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Alle",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Actief",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Verloopt binnenkort",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Verlopen",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Ingewisseld",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Sorteren",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Nieuwste eerst",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Vervaldatum",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Sorteren op domein",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Bewerken",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Verwijderen",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Dupliceren",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Markeren als ingewisseld",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Geselecteerde verwijderen",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Geselecteerde markeren als ingewisseld",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Instellingen",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Weergavemodus",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Altijd",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Winkelwagen/afrekenen",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Alleen badge",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Herinneringstijd voor vervaldatum",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Meldingen",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Thema",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Systeem",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Licht",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Donker",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Uitgesloten domeinen",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Domein uitsluiten",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Opslag en synchronisatie",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Synchronisatie actief",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Lokale fallback",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Exporteren",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Importeren",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Importvoorbeeld",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 kortingsbonnen, $2 duplicaten, $3 ongeldige rijen",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Import toepassen",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Annuleren",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Alles selecteren",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Instellingen opgeslagen.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Importeren/exporteren",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "CSV exporteren",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Vouchervelden detecteren",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Verlopen vouchers archiveren",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 kortingsbonnen",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (kopie)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Een hint zoals “voucher in je account” is vaak voldoende.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Code kopiëren",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Wachtwoord vereist",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Hoofdwachtwoord bevestigen",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "De wachtwoorden komen niet overeen.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Beveiliging",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Codes versleutelen met een hoofdwachtwoord",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Als je je wachtwoord vergeet, kunnen versleutelde codes niet worden hersteld.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Sleutel verloopt na",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Alleen lokaal opslaan (geen browsersynchronisatie)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind stuurt niets naar eigen servers. De beveiliging van gesynchroniseerde gegevens hangt af van je browseraccount, zoals 2FA en een synchronisatiezin.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Verzending",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Overig",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Passende vouchers",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Herinner mij later (1 uur)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Herinner mij later (1 dag)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Dit domein dempen",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Sluiten",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Geen vervaldatum",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Geldig tot $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: vouchers verlopen binnenkort",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 vouchers verlopen binnenkort.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Voucher voor deze pagina toevoegen",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Taal",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Automatisch (browsertaal)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Engels",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Duits",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Spaans",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Frans",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Portugees (Brazilië)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Portugees (Portugal)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Italiaans",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Nederlands",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Pools",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Russisch",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Turks",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Japans",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Koreaans",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Vereenvoudigd Chinees",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Traditioneel Chinees",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hindi",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Arabisch",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Indonesisch",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Oekraïens",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Zweeds",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 dag",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 dagen",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 minuten",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 uur",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 uur lang",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Deze voucher verwijderen?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Voucher niet gevonden.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Deze voucher heeft geen code.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Een wachtwoord is vereist.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Ongeldig wachtwoord of versleutelde waarde.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Ontgrendelen is vereist.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Ongeldige voucherexport.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Voor een versleutelde import is een wachtwoord vereist.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Deze versie van de versleutelde waarde wordt niet ondersteund.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Deze voucher overschrijdt de opslaglimiet.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Opslagquotum overschreden.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "CSV-export moet een koptekst en ten minste één rij bevatten.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "De CSV-koptekst mist verplichte kolommen.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "De CSV bevat een niet-afgesloten veld tussen aanhalingstekens.",
+    "description": "Error message."
+  }
+}

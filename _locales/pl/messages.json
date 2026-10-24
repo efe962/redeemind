@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Przypomina o zapisanych kuponach podczas zakupów online.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Wszystkie kupony",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Dodaj kupon",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Domena",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Tytuł",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Kod",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Typ",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Wygasa",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Zapisz",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Zapisano.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Otwórz ustawienia",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Brak ważnych kuponów dla tej domeny.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Kupony dla tej strony",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Szukaj",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Filtr",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Wszystkie",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Aktywne",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Wkrótce wygasają",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Wygasłe",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Wykorzystane",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Sortuj",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Najnowsze najpierw",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Termin wygaśnięcia",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Sortuj według domeny",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Edytuj",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Usuń",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Duplikuj",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Oznacz jako wykorzystany",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Usuń zaznaczone",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Oznacz zaznaczone jako wykorzystane",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Ustawienia",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Tryb wyświetlania",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Zawsze",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Koszyk / płatność",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Tylko plakietka",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Wyprzedzenie przypomnienia o wygaśnięciu",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Powiadomienia",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Motyw",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Systemowy",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Jasny",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Ciemny",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Wykluczone domeny",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Wyklucz domenę",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Pamięć i synchronizacja",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Synchronizacja aktywna",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Lokalna kopia zapasowa",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Eksportuj",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Importuj",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Podgląd importu",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 kuponów, $2 duplikatów, $3 nieprawidłowych wierszy",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Zastosuj importowanie",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Anuluj",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Zaznacz wszystko",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Ustawienia zapisano.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Importowanie / eksportowanie",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Eksportuj CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Wykryj pola kuponu",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Archiwizuj wygasłe kupony",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 kuponów",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (kopia)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "Wskazówki takie jak „kupon na Twoim koncie” często wystarczą.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Kopiuj kod",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Wymagane hasło",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Potwierdź hasło główne",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Hasła nie są zgodne.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Bezpieczeństwo",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Szyfruj kody hasłem głównym",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Po zapomnieniu hasła zaszyfrowanych kodów nie można odzyskać.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Klucz wygasa po",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Przechowuj tylko lokalnie (bez synchronizacji przeglądarki)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind nie wysyła danych na własne serwery; bezpieczeństwo synchronizowanych danych zależy od konta przeglądarki.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Wysyłka",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Inne",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Pasujące kupony",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Przypomnij później (1 godzina)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Przypomnij później (1 dzień)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Wycisz tę domenę",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Zamknij",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Brak terminu wygaśnięcia",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Ważny do $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: kupony wkrótce wygasną",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 kuponów wkrótce wygaśnie.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Dodaj kupon do tej strony",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Język",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Automatyczny (język przeglądarki)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "Angielski",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Niemiecki",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "Hiszpański",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Francuski",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Portugalski (Brazylia)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Portugalski (Portugalia)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "Włoski",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Niderlandzki",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Polski",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Rosyjski",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Turecki",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Japoński",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Koreański",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Chiński uproszczony",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Chiński tradycyjny",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hindi",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Arabski",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Indonezyjski",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Ukraiński",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "Szwedzki",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 dzień",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 dni",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 minut",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 godzina",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 godzin",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Usunąć ten kupon?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Nie znaleziono kuponu.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Ten kupon nie ma kodu.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Wymagane jest hasło.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Nieprawidłowe hasło lub zaszyfrowana wartość.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Wymagane jest odblokowanie.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Nieprawidłowy eksport kuponów.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Importowanie zaszyfrowanych danych wymaga hasła.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Nieobsługiwana wersja zaszyfrowanej wartości.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Ten kupon przekracza limit pamięci.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Przekroczono limit pamięci.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "Eksport CSV musi zawierać nagłówek i co najmniej jeden wiersz.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "Nagłówek CSV nie zawiera wymaganych kolumn.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV zawiera niezakończone pole w cudzysłowie.",
+    "description": "Error message."
+  }
+}

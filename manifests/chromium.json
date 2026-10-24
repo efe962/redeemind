@@ -1,0 +1,29 @@
+{
+  "name": "Redeemind",
+  "version": "0.1.0",
+  "description": "Erinnert an passende Gutscheine beim Online-Einkauf.",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "contextMenus",
+    "clipboardWrite",
+    "activeTab"
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "assets/background.js", "type": "module" },
+  "action": { "default_title": "Redeemind", "default_popup": "src/popup/index.html" },
+  "options_ui": { "page": "src/options/index.html", "open_in_tab": true },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["assets/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "default_locale": "en"
+}

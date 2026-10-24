@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "線上購物時提醒您使用符合條件的優惠券。",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "此網站的優惠券",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "新增優惠券",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "網域",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "標題",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "優惠代碼",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "類型",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "到期時間",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "儲存",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "已儲存。",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "開啟選項",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "此網域沒有有效的優惠券。",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "所有優惠券",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "搜尋",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "篩選",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "全部",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "有效",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "即將到期",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "已過期",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "已兌換",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "排序",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "最新優先",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "到期日期",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "依網域排序",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "編輯",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "刪除",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "複製",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "標記為已兌換",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "刪除所選",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "將所選標記為已兌換",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "設定",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "顯示模式",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "一律顯示",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "購物車／結帳",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "僅顯示徽章",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "到期提醒提前時間",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "通知",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "主題",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "系統",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "淺色",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "深色",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "排除的網域",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "排除網域",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "儲存空間與同步",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "同步已啟用",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "本機備援儲存",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "匯出",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "匯入",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "匯入預覽",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 張新優惠券、$2 個重複項目、$3 列無效資料",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "套用匯入",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "取消",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "全選",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "設定已儲存。",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "匯入／匯出",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "匯出 CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "偵測優惠券欄位",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "封存已過期優惠券",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 張優惠券",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": "（副本）",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "「帳戶中的優惠券」等提示通常就足夠了。",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "複製優惠代碼",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "需要密碼",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "確認主密碼",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "兩次輸入的密碼不相符。",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "安全性",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "使用主密碼加密優惠代碼",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "如果忘記密碼，將無法復原加密的優惠代碼。",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "金鑰到期時間",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "僅儲存在本機（不進行瀏覽器同步）",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind 不會將任何資料傳送至自己的伺服器。同步資料的安全性取決於您的瀏覽器帳戶，例如雙重驗證和同步密語。",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "配送",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "其他",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "符合條件的優惠券",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "稍後提醒（1 小時）",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "稍後提醒（1 天）",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "封鎖此網域",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "關閉",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "沒有到期日期",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "有效期至 $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind：優惠券即將到期",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "有 $1 張優惠券即將到期。",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "為此頁面新增優惠券",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "語言",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "自動（瀏覽器語言）",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "英語",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "德語",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "西班牙語",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "法語",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "葡萄牙語（巴西）",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "葡萄牙語（葡萄牙）",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "義大利語",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "荷蘭語",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "波蘭語",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "俄語",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "土耳其語",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "日語",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "韓語",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "簡體中文",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "繁體中文",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "印地語",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "阿拉伯語",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "印尼語",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "烏克蘭語",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "瑞典語",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 天",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 天（複數）",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 分鐘",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 小時",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 小時（複數）",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "確定要刪除此優惠券嗎？",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "找不到優惠券。",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "此優惠券沒有優惠代碼。",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "需要密碼。",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "密碼或加密值無效。",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "需要解除鎖定。",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "優惠券匯出檔案無效。",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "匯入加密資料需要密碼。",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "不支援此加密值版本。",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "此優惠券超過儲存空間限制。",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "已超過儲存配額。",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "CSV 匯出必須包含標題列和至少一列資料。",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "CSV 標題缺少必要欄位。",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV 包含未結束的引號欄位。",
+    "description": "Error message."
+  }
+}

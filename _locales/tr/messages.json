@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "İnternetten alışveriş yaparken kayıtlı kuponlarınızı hatırlatır.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Bu web sitesi için kuponlar",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Kupon ekle",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Alan adı",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Başlık",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Kod",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Tür",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Son kullanma",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Kaydet",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Kaydedildi.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Ayarları aç",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Bu alan adı için geçerli kupon yok.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Tüm kuponlar",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Ara",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Filtre",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Tümü",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Etkin",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Süresi yakında doluyor",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Süresi dolmuş",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Kullanıldı",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Sırala",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Yeniler önce",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Son kullanma tarihi",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Alana göre sırala",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Düzenle",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Sil",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Çoğalt",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Kullanıldı olarak işaretle",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Seçilenleri sil",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Seçilenleri kullanıldı olarak işaretle",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Ayarlar",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Görüntüleme modu",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Her zaman",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Sepet/ödeme",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Yalnızca rozet",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Süre dolmadan önce hatırlatma",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Bildirimler",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Tema",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Sistem",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Açık",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Koyu",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Hariç tutulan alan adları",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Alan adını hariç tut",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Depolama ve senkronizasyon",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Senkronizasyon etkin",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Yerel yedek",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Dışa aktar",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "İçe aktar",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "İçe aktarma önizlemesi",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 kupon, $2 yinelenen, $3 geçersiz satır",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "İçe aktarmayı uygula",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "İptal",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Tümünü seç",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Ayarlar kaydedildi.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "İçe aktar / dışa aktar",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "CSV dışa aktar",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Kupon alanlarını algıla",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Süresi dolan kuponları arşivle",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 kupon",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (kopya)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "„Hesabımda kupon” gibi bir not genellikle yeterlidir.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Kodu kopyala",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Parola gerekli",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Ana parolayı onayla",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Parolalar eşleşmiyor.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Güvenlik",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Kodları ana parolayla şifrele",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Parolanızı unutursanız şifrelenmiş kodlar kurtarılamaz.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Anahtarın süresi şu kadar sonra dolar",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Yalnızca yerel olarak sakla (tarayıcı senkronizasyonu yok)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind kendi sunucularına hiçbir şey göndermez; senkronize verilerin güvenliği tarayıcı hesabınıza bağlıdır.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Kargo",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Diğer",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Uygun kuponlar",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Daha sonra hatırlat (1 saat)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Daha sonra hatırlat (1 gün)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Bu alan adını sessize al",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Kapat",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Son kullanma tarihi yok",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "$1 tarihine kadar geçerli",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: süresi yakında dolan kuponlar",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 kuponun süresi yakında doluyor.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Bu sayfaya kupon ekle",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Dil",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Otomatik (tarayıcı dili)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "İngilizce",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "Almanca",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "İspanyolca",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "Fransızca",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "Portekizce (Brezilya)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "Portekizce (Portekiz)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "İtalyanca",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "Felemenkçe",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "Lehçe",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "Rusça",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "Türkçe",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "Japonca",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "Korece",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "Basitleştirilmiş Çince",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "Geleneksel Çince",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hintçe",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "Arapça",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "Endonezce",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "Ukraynaca",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "İsveççe",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 gün",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 günlük süre",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 dakika",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 saat",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 saatlik süre",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Bu kupon silinsin mi?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Kupon bulunamadı.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Bu kuponun kodu yok.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Parola gerekli.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Geçersiz parola veya şifrelenmiş değer.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Kilidi açmak gerekiyor.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Geçersiz kupon dışa aktarması.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Şifrelenmiş içe aktarma için parola gerekli.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Şifrelenmiş değer sürümü desteklenmiyor.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Bu kupon depolama sınırını aşıyor.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Depolama kotası aşıldı.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "CSV dışa aktarması bir başlık ve en az bir satır içermelidir.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "CSV başlığında gerekli sütunlar eksik.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV tamamlanmamış tırnaklı alan içeriyor.",
+    "description": "Error message."
+  }
+}

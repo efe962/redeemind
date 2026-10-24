@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redeemind</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+        background: #f8fafc;
+        color: #172033;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          background: #111827;
+          color: #f3f4f6;
+        }
+      }
+      :root[data-theme='light'] {
+        color-scheme: light;
+        background: #f8fafc;
+        color: #172033;
+      }
+      :root[data-theme='dark'] {
+        color-scheme: dark;
+        background: #111827;
+        color: #f3f4f6;
+      }
+      body {
+        margin: 0;
+      }
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 24px;
+      }
+      :root[dir='rtl'] main {
+        direction: rtl;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      section {
+        background: color-mix(in srgb, Canvas 94%, #2563eb);
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        padding: 16px;
+        margin: 16px 0;
+      }
+      .toolbar,
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+      .toolbar > * {
+        flex: 1;
+        min-width: 130px;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        padding: 8px;
+        border-radius: 7px;
+        border: 1px solid #94a3b8;
+      }
+      button {
+        cursor: pointer;
+        background: #2563eb;
+        color: white;
+        border: 0;
+      }
+      button.secondary {
+        background: transparent;
+        color: inherit;
+        border: 1px solid #94a3b8;
+      }
+      label {
+        display: grid;
+        gap: 4px;
+        margin: 10px 0;
+      }
+      .setting-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 4px 20px;
+      }
+      .voucher {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 12px;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #cbd5e1;
+      }
+      .voucher:last-child {
+        border: 0;
+      }
+      .muted {
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+      .actions {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      output {
+        display: block;
+        min-height: 1.2em;
+        margin-top: 8px;
+      }
+      dialog {
+        max-width: 560px;
+        border: 1px solid #94a3b8;
+        border-radius: 12px;
+      }
+      dialog::backdrop {
+        background: #0008;
+      }
+      @media (max-width: 600px) {
+        main {
+          padding: 12px;
+        }
+        .voucher {
+          grid-template-columns: auto 1fr;
+        }
+        .voucher .actions {
+          grid-column: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 data-i18n="allVouchers">All vouchers</h1>
+      <section>
+        <div class="toolbar">
+          <input id="search" type="search" data-i18n-placeholder="search" placeholder="Suchen" />
+          <select id="filter" data-i18n-aria-label="filter">
+            <option value="all" data-i18n="all">All</option>
+            <option value="active" data-i18n="active">Active</option>
+            <option value="expiringSoon" data-i18n="expiringSoon">Expiring soon</option>
+            <option value="expired" data-i18n="expired">Expired</option>
+            <option value="redeemed" data-i18n="redeemed">Redeemed</option>
+          </select>
+          <select id="sort" data-i18n-aria-label="sort">
+            <option value="newest" data-i18n="newest">Newest first</option>
+            <option value="expiry" data-i18n="expiry">Expiry date</option>
+            <option value="domain" data-i18n="domainSort">Domain</option>
+          </select>
+        </div>
+        <div class="row" style="margin-top: 12px">
+          <label
+            ><input id="select-all" type="checkbox" />
+            <span data-i18n="selectAll">Alle auswählen</span></label
+          ><button id="bulk-redeem" class="secondary" data-i18n="bulkRedeem">
+            Ausgewählte einlösen</button
+          ><button id="bulk-delete" class="secondary" data-i18n="bulkDelete">
+            Ausgewählte löschen
+          </button>
+        </div>
+        <div id="vouchers" aria-live="polite"></div>
+      </section>
+      <section>
+        <h2 data-i18n="settings">Einstellungen</h2>
+        <label
+          ><span data-i18n="language">Sprache</span
+          ><select id="language" data-i18n-aria-label="language">
+            <option value="" data-i18n="languageAuto">Automatic (browser language)</option>
+            <option value="en" data-i18n="languageEnglish">English</option>
+            <option value="de" data-i18n="languageGerman">Deutsch</option>
+            <option value="es" data-i18n="languageSpanish">Español</option>
+            <option value="fr" data-i18n="languageFrench">Français</option>
+            <option value="pt_BR" data-i18n="languagePortugueseBrazil">Português (Brasil)</option>
+            <option value="pt_PT" data-i18n="languagePortuguesePortugal">
+              Português (Portugal)
+            </option>
+            <option value="it" data-i18n="languageItalian">Italiano</option>
+            <option value="nl" data-i18n="languageDutch">Nederlands</option>
+            <option value="pl" data-i18n="languagePolish">Polski</option>
+            <option value="ru" data-i18n="languageRussian">Русский</option>
+            <option value="tr" data-i18n="languageTurkish">Türkçe</option>
+            <option value="ja" data-i18n="languageJapanese">日本語</option>
+            <option value="ko" data-i18n="languageKorean">한국어</option>
+            <option value="zh_CN" data-i18n="languageChineseSimplified">简体中文</option>
+            <option value="zh_TW" data-i18n="languageChineseTraditional">繁體中文</option>
+            <option value="hi" data-i18n="languageHindi">हिन्दी</option>
+            <option value="ar" data-i18n="languageArabic">العربية</option>
+            <option value="id" data-i18n="languageIndonesian">Bahasa Indonesia</option>
+            <option value="uk" data-i18n="languageUkrainian">Українська</option>
+            <option value="sv" data-i18n="languageSwedish">Svenska</option>
+          </select></label
+        >
+        <form id="settings-form" class="setting-grid">
+          <label
+            ><span data-i18n="displayMode">Anzeigemodus</span
+            ><select name="displayMode">
+              <option value="always" data-i18n="always">Immer</option>
+              <option value="checkout" data-i18n="checkout">Warenkorb/Checkout</option>
+              <option value="badge" data-i18n="badge">Nur Badge</option>
+            </select></label
+          >
+          <label
+            ><span data-i18n="expiryReminder">Ablauf-Vorlauf</span
+            ><select name="expiryReminderDays">
+              <option value="1">1 Tag</option>
+              <option value="3">3 Tage</option>
+              <option value="7">7 Tage</option>
+            </select></label
+          >
+          <label
+            ><span data-i18n="theme">Theme</span
+            ><select name="theme">
+              <option value="system" data-i18n="system">System</option>
+              <option value="light" data-i18n="light">Hell</option>
+              <option value="dark" data-i18n="dark">Dunkel</option>
+            </select></label
+          >
+          <label
+            ><span>&nbsp;</span
+            ><span
+              ><input name="notifications" type="checkbox" />
+              <span data-i18n="notifications">Benachrichtigungen</span></span
+            ></label
+          >
+          <label
+            ><span>&nbsp;</span
+            ><span
+              ><input name="useDomHeuristic" type="checkbox" />
+              <span data-i18n="detectFields">Gutscheinfelder erkennen</span></span
+            ></label
+          >
+          <label
+            ><span>&nbsp;</span
+            ><span
+              ><input name="archiveExpired" type="checkbox" />
+              <span data-i18n="archiveExpired">Abgelaufene archivieren</span></span
+            ></label
+          >
+          <button type="submit" data-i18n="save">Speichern</button>
+        </form>
+        <output id="settings-status" aria-live="polite"></output>
+      </section>
+      <section>
+        <h2 data-i18n="exclusions">Ausgeschlossene Domains</h2>
+        <div class="row">
+          <input
+            id="excluded-domain"
+            data-i18n-placeholder="domainPlaceholder"
+            placeholder="example.com"
+          /><button id="add-exclusion" data-i18n="addDomain">Domain ausschließen</button>
+        </div>
+        <ul id="exclusions"></ul>
+      </section>
+      <section>
+        <h2 data-i18n="security">Sicherheit</h2>
+        <form id="security-form">
+          <label
+            ><span
+              ><input name="encryptCodes" type="checkbox" />
+              <span data-i18n="encryptCodes">Codes mit Master-Passwort verschlüsseln</span></span
+            ></label
+          >
+          <p class="muted" data-i18n="passwordWarning">
+            Wenn du dein Passwort vergisst, können verschlüsselte Codes nicht wiederhergestellt
+            werden.
+          </p>
+          <label
+            ><span data-i18n="keyExpiry">Schlüssel verfällt nach</span
+            ><select name="keyExpiryMinutes">
+              <option value="15">15 Minuten</option>
+              <option value="30">30 Minuten</option>
+              <option value="60">1 Stunde</option>
+              <option value="240">4 Stunden</option>
+            </select></label
+          >
+          <label
+            ><span
+              ><input name="localOnly" type="checkbox" />
+              <span data-i18n="localOnly">Nur lokal speichern (kein Browser-Sync)</span></span
+            ></label
+          >
+          <p class="muted" data-i18n="securityNotice">
+            Redeemind sendet nichts an eigene Server. Die Sicherheit synchronisierter Daten hängt
+            von deinem Browser-Konto ab (z. B. 2FA, Sync-Passphrase).
+          </p>
+          <button type="submit" data-i18n="save">Speichern</button
+          ><output id="security-status" aria-live="polite"></output>
+        </form>
+      </section>
+      <section>
+        <h2 data-i18n="storageStatus">Speicher und Synchronisierung</h2>
+        <p id="storage-status" class="muted"></p>
+      </section>
+      <section>
+        <h2 data-i18n="importExport">Import / Export</h2>
+        <div class="row">
+          <button id="export-json" data-i18n="export">Exportieren</button
+          ><button id="export-csv" data-i18n="exportCsv">CSV exportieren</button
+          ><label class="secondary"
+            ><span data-i18n="import">Importieren</span
+            ><input id="import-file" type="file" accept=".json,.csv"
+          /></label>
+        </div>
+        <output id="import-status" aria-live="polite"></output>
+      </section>
+      <dialog id="import-dialog">
+        <h2 data-i18n="importPreview">Import-Vorschau</h2>
+        <p id="import-preview"></p>
+        <div class="row">
+          <button id="apply-import" data-i18n="applyImport">Import übernehmen</button
+          ><button id="cancel-import" class="secondary" data-i18n="cancel">Abbrechen</button>
+        </div>
+      </dialog>
+    </main>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>

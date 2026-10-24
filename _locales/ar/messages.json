@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "يذكّرك بالقسائم المطابقة أثناء التسوق عبر الإنترنت.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "قسائم هذا الموقع",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "إضافة قسيمة",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "النطاق",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "العنوان",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "الرمز",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "النوع",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "تنتهي في",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "حفظ",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "تم الحفظ",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "فتح الإعدادات",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "لا توجد قسائم صالحة لهذا النطاق.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "جميع القسائم",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "بحث",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "تصفية",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "الكل",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "نشطة",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "تنتهي قريبًا",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "منتهية الصلاحية",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "مستخدمة",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "فرز",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "الأحدث أولًا",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "تاريخ الانتهاء",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "نطاق القسيمة",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "تعديل",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "حذف",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "تكرار",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "وضع علامة كمستخدمة",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "حذف المحددة",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "وضع علامة على المحددة كمستخدمة",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "الإعدادات",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "وضع العرض",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "دائمًا",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "السلة والدفع",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "الشارة فقط",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "مدة التذكير قبل الانتهاء",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "الإشعارات",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "المظهر",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "النظام",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "فاتح",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "داكن",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "النطاقات المستبعدة",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "استبعاد نطاق",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "التخزين والمزامنة",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "المزامنة نشطة",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "تخزين محلي احتياطي",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "تصدير",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "استيراد",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "معاينة الاستيراد",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 قسائم جديدة، $2 مكررة، $3 صفوف غير صالحة",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "تطبيق الاستيراد",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "إلغاء",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "تحديد الكل",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "تم حفظ الإعدادات",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "استيراد وتصدير",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "تصدير CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "اكتشاف حقول القسيمة",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "أرشفة القسائم المنتهية",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 قسيمة",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (نسخة)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "تكفي عادةً تلميحات مثل «قسيمة في حسابك».",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "نسخ الرمز",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "كلمة المرور مطلوبة",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "تأكيد كلمة المرور الرئيسية",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "كلمتا المرور غير متطابقتين.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "الأمان",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "تشفير الرموز بكلمة مرور رئيسية",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "لا يمكن استرداد الرموز المشفّرة إذا نسيت كلمة المرور.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "تنتهي صلاحية المفتاح بعد",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "التخزين محليًا فقط (من دون مزامنة المتصفح)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "لا ترسل Redeemind أي بيانات إلى خوادمها. وتعتمد حماية البيانات المتزامنة على حساب المتصفح، مثل المصادقة الثنائية وعبارة مرور المزامنة.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "الشحن",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "أخرى",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "القسائم المطابقة",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "تذكيري لاحقًا (بعد ساعة)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "تذكيري لاحقًا (بعد يوم)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "كتم هذا النطاق",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "إغلاق",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "من دون تاريخ انتهاء",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "صالح حتى $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: قسائم تنتهي قريبًا",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "ستنتهي صلاحية $1 من القسائم قريبًا.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "إضافة قسيمة لهذه الصفحة",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "اللغة",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "تلقائي (لغة المتصفح)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "الإنجليزية",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "الألمانية",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "الإسبانية",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "الفرنسية",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "البرتغالية (البرازيل)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "البرتغالية (البرتغال)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "الإيطالية",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "الهولندية",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "البولندية",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "الروسية",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "التركية",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "اليابانية",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "الكورية",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "الصينية المبسطة",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "الصينية التقليدية",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "الهندية",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "العربية",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "الإندونيسية",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "الأوكرانية",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "السويدية",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 يوم",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 أيام",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 دقيقة",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 ساعة",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 ساعات",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "هل تريد حذف هذه القسيمة؟",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "لم يتم العثور على القسيمة.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "لا تحتوي هذه القسيمة على رمز.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "كلمة المرور مطلوبة.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "كلمة المرور أو القيمة المشفّرة غير صالحة.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "يلزم إلغاء القفل.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "تصدير القسائم غير صالح.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "يلزم إدخال كلمة مرور للاستيراد المشفّر.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "إصدار القيمة المشفّرة غير مدعوم.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "تتجاوز هذه القسيمة حد التخزين.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "تم تجاوز حصة التخزين.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "يجب أن يتضمن تصدير CSV عنوانًا وصفًا واحدًا على الأقل.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "يفتقد عنوان CSV إلى أعمدة مطلوبة.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "يحتوي CSV على حقل مقتبس غير مكتمل.",
+    "description": "Error message."
+  }
+}

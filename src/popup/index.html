@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redeemind</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+        background: #f8fafc;
+        color: #172033;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          background: #111827;
+          color: #f3f4f6;
+        }
+      }
+      body {
+        margin: 0;
+        min-width: 320px;
+        max-width: 440px;
+      }
+      main {
+        padding: 16px;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin: 0 0 12px;
+      }
+      section {
+        background: color-mix(in srgb, Canvas 94%, #2563eb);
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 12px;
+        margin-top: 12px;
+      }
+      label {
+        display: grid;
+        gap: 4px;
+        margin: 8px 0;
+        font-size: 0.85rem;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        padding: 8px;
+        border-radius: 7px;
+        border: 1px solid #94a3b8;
+      }
+      button {
+        cursor: pointer;
+        background: #2563eb;
+        color: white;
+        border: 0;
+      }
+      button.secondary {
+        background: transparent;
+        color: inherit;
+        border: 1px solid #94a3b8;
+      }
+      .voucher {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #cbd5e1;
+      }
+      .voucher:last-child {
+        border-bottom: 0;
+      }
+      .code {
+        font-weight: 700;
+        color: #2563eb;
+      }
+      .muted {
+        color: #64748b;
+        font-size: 0.85rem;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .row > * {
+        flex: 1;
+      }
+      output {
+        display: block;
+        margin-top: 8px;
+        min-height: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 data-i18n="popupTitle">Vouchers for this site</h1>
+      <section><div id="vouchers" aria-live="polite"></div></section>
+      <section>
+        <h2 data-i18n="addVoucher">Add voucher</h2>
+        <form id="add-form">
+          <label><span data-i18n="domain">Domain</span><input name="domain" required /></label>
+          <label
+            ><span data-i18n="title">Titel</span><input name="title" required autofocus
+          /></label>
+          <label
+            ><span data-i18n="code">Code</span><input name="code" /><small data-i18n="codeHint"
+              >Hints such as “voucher in your account” are often enough.</small
+            ></label
+          >
+          <div class="row">
+            <label
+              ><span data-i18n="type">Typ</span
+              ><select name="type">
+                <option value="percent">%</option>
+                <option value="amount">€</option>
+                <option value="shipping" data-i18n="shipping">Versand</option>
+                <option value="other" data-i18n="other">Sonstiges</option>
+              </select></label
+            >
+            <label
+              ><span data-i18n="expiresAt">Ablaufdatum</span><input name="expiresAt" type="date"
+            /></label>
+          </div>
+          <button type="submit" data-i18n="save">Speichern</button
+          ><output id="status" aria-live="polite"></output>
+        </form>
+      </section>
+      <button id="options" class="secondary" data-i18n="options">Optionen öffnen</button>
+    </main>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>

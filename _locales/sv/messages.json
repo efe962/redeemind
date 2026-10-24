@@ -1,0 +1,560 @@
+{
+  "extensionName": {
+    "message": "Redeemind",
+    "description": "Extension name shown in the store and browser UI."
+  },
+  "extensionDescription": {
+    "message": "Påminner dig om sparade kuponger när du handlar online.",
+    "description": "Store description."
+  },
+  "popupTitle": {
+    "message": "Kuponger för den här webbplatsen",
+    "description": "Popup heading."
+  },
+  "addVoucher": {
+    "message": "Lägg till kupong",
+    "description": "Button or section heading for adding a voucher."
+  },
+  "domain": {
+    "message": "Domän",
+    "description": "Voucher domain label."
+  },
+  "title": {
+    "message": "Titel",
+    "description": "Voucher title label."
+  },
+  "code": {
+    "message": "Kod",
+    "description": "Voucher code label."
+  },
+  "type": {
+    "message": "Typ",
+    "description": "Voucher type label."
+  },
+  "expiresAt": {
+    "message": "Går ut",
+    "description": "Voucher expiry label."
+  },
+  "save": {
+    "message": "Spara",
+    "description": "Save action."
+  },
+  "saved": {
+    "message": "Sparat.",
+    "description": "Save confirmation."
+  },
+  "options": {
+    "message": "Öppna inställningar",
+    "description": "Open settings action."
+  },
+  "noVouchers": {
+    "message": "Inga giltiga kuponger för denna domän.",
+    "description": "Empty voucher list message."
+  },
+  "allVouchers": {
+    "message": "Alla kuponger",
+    "description": "Options page heading."
+  },
+  "search": {
+    "message": "Sök",
+    "description": "Search field placeholder."
+  },
+  "filter": {
+    "message": "Filtrera",
+    "description": "Filter control label."
+  },
+  "all": {
+    "message": "Alla",
+    "description": "All filter option."
+  },
+  "active": {
+    "message": "Aktiva",
+    "description": "Active filter option."
+  },
+  "expiringSoon": {
+    "message": "Går snart ut",
+    "description": "Expiring-soon filter option."
+  },
+  "expired": {
+    "message": "Utgångna",
+    "description": "Expired filter option."
+  },
+  "redeemed": {
+    "message": "Använda",
+    "description": "Redeemed filter option."
+  },
+  "sort": {
+    "message": "Sortera",
+    "description": "Sort control label."
+  },
+  "newest": {
+    "message": "Nyast först",
+    "description": "Sort option."
+  },
+  "expiry": {
+    "message": "Utgångsdatum",
+    "description": "Sort option."
+  },
+  "domainSort": {
+    "message": "Sortera efter domän",
+    "description": "Sort option."
+  },
+  "edit": {
+    "message": "Redigera",
+    "description": "Edit action."
+  },
+  "delete": {
+    "message": "Ta bort",
+    "description": "Delete action."
+  },
+  "duplicate": {
+    "message": "Duplicera",
+    "description": "Duplicate action."
+  },
+  "markRedeemed": {
+    "message": "Markera som använd",
+    "description": "Redeem action."
+  },
+  "bulkDelete": {
+    "message": "Ta bort valda",
+    "description": "Bulk delete action."
+  },
+  "bulkRedeem": {
+    "message": "Markera valda som använda",
+    "description": "Bulk redeem action."
+  },
+  "settings": {
+    "message": "Inställningar",
+    "description": "Settings heading."
+  },
+  "displayMode": {
+    "message": "Visningsläge",
+    "description": "Display mode setting."
+  },
+  "always": {
+    "message": "Alltid",
+    "description": "Display mode option."
+  },
+  "checkout": {
+    "message": "Varukorg/kassa",
+    "description": "Display mode option."
+  },
+  "badge": {
+    "message": "Endast märke",
+    "description": "Display mode option."
+  },
+  "expiryReminder": {
+    "message": "Förvarning för utgångsdatum",
+    "description": "Expiry reminder setting."
+  },
+  "notifications": {
+    "message": "Aviseringar",
+    "description": "Notification setting."
+  },
+  "theme": {
+    "message": "Tema",
+    "description": "Theme setting."
+  },
+  "system": {
+    "message": "Systeminställning",
+    "description": "Theme option."
+  },
+  "light": {
+    "message": "Ljust",
+    "description": "Theme option."
+  },
+  "dark": {
+    "message": "Mörkt",
+    "description": "Theme option."
+  },
+  "exclusions": {
+    "message": "Undantagna domäner",
+    "description": "Exclusion heading."
+  },
+  "addDomain": {
+    "message": "Undanta domän",
+    "description": "Exclusion action."
+  },
+  "storageStatus": {
+    "message": "Lagring och synkronisering",
+    "description": "Storage heading."
+  },
+  "syncAvailable": {
+    "message": "Synkronisering aktiv",
+    "description": "Sync status."
+  },
+  "localStorage": {
+    "message": "Lokal reserv",
+    "description": "Storage status."
+  },
+  "export": {
+    "message": "Exportera",
+    "description": "Export action."
+  },
+  "import": {
+    "message": "Importera",
+    "description": "Import action."
+  },
+  "importPreview": {
+    "message": "Förhandsgranskning av importerade data",
+    "description": "Import dialog heading."
+  },
+  "importCount": {
+    "message": "$1 kuponger, $2 dubbletter, $3 ogiltiga rader",
+    "description": "Import result summary.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "applyImport": {
+    "message": "Tillämpa importen",
+    "description": "Import action."
+  },
+  "cancel": {
+    "message": "Avbryt",
+    "description": "Cancel action."
+  },
+  "selectAll": {
+    "message": "Markera alla",
+    "description": "Selection action."
+  },
+  "savedSettings": {
+    "message": "Inställningarna har sparats.",
+    "description": "Settings confirmation."
+  },
+  "importExport": {
+    "message": "Importera / exportera",
+    "description": "Import and export heading."
+  },
+  "exportCsv": {
+    "message": "Exportera CSV",
+    "description": "CSV export action."
+  },
+  "detectFields": {
+    "message": "Identifiera kupongfält",
+    "description": "Heuristic setting."
+  },
+  "archiveExpired": {
+    "message": "Arkivera utgångna kuponger",
+    "description": "Archive setting."
+  },
+  "voucherCount": {
+    "message": "$1 kuponger",
+    "description": "Voucher count.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "copySuffix": {
+    "message": " (kopia)",
+    "description": "Suffix added to duplicated voucher titles."
+  },
+  "domainPlaceholder": {
+    "message": "example.com",
+    "description": "Domain input placeholder."
+  },
+  "codeHint": {
+    "message": "En anteckning som „kupong i ditt konto” räcker ofta.",
+    "description": "Code privacy hint."
+  },
+  "copyCode": {
+    "message": "Kopiera kod",
+    "description": "Copy action."
+  },
+  "passwordRequired": {
+    "message": "Lösenord krävs",
+    "description": "Password prompt."
+  },
+  "confirmPassword": {
+    "message": "Bekräfta huvudlösenord",
+    "description": "Password prompt."
+  },
+  "passwordMismatch": {
+    "message": "Lösenorden matchar inte.",
+    "description": "Password validation error."
+  },
+  "security": {
+    "message": "Säkerhet",
+    "description": "Security heading."
+  },
+  "encryptCodes": {
+    "message": "Kryptera koder med ett huvudlösenord",
+    "description": "Encryption setting."
+  },
+  "passwordWarning": {
+    "message": "Om du glömmer lösenordet kan krypterade koder inte återställas.",
+    "description": "Encryption warning."
+  },
+  "keyExpiry": {
+    "message": "Nyckeln upphör efter",
+    "description": "Encryption setting."
+  },
+  "localOnly": {
+    "message": "Lagra endast lokalt (ingen webbläsarsynkronisering)",
+    "description": "Storage setting."
+  },
+  "securityNotice": {
+    "message": "Redeemind skickar inget till egna servrar; säkerheten för synkroniserade data beror på ditt webbläsarkonto.",
+    "description": "Security notice."
+  },
+  "shipping": {
+    "message": "Frakt",
+    "description": "Voucher type."
+  },
+  "other": {
+    "message": "Övrigt",
+    "description": "Voucher type."
+  },
+  "bannerTitle": {
+    "message": "Matchande kuponger",
+    "description": "Content-script banner heading."
+  },
+  "remindHour": {
+    "message": "Påminn mig senare (1 timme)",
+    "description": "Banner action."
+  },
+  "remindDay": {
+    "message": "Påminn mig senare (1 dag)",
+    "description": "Banner action."
+  },
+  "muteDomain": {
+    "message": "Dölj den här domänen",
+    "description": "Banner action."
+  },
+  "close": {
+    "message": "Stäng",
+    "description": "Banner action."
+  },
+  "noExpiry": {
+    "message": "Inget utgångsdatum",
+    "description": "Expiry display."
+  },
+  "validUntil": {
+    "message": "Giltig till $1",
+    "description": "Expiry display.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "expiryNotificationTitle": {
+    "message": "Redeemind: kuponger går snart ut",
+    "description": "Notification title."
+  },
+  "expiryNotificationMessage": {
+    "message": "$1 kuponger går snart ut.",
+    "description": "Notification message.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "addVoucherContext": {
+    "message": "Lägg till kupong på den här sidan",
+    "description": "Context-menu action."
+  },
+  "language": {
+    "message": "Språk",
+    "description": "Language setting."
+  },
+  "languageAuto": {
+    "message": "Automatiskt (webbläsarens språk)",
+    "description": "Language option."
+  },
+  "languageEnglish": {
+    "message": "engelska",
+    "description": "Language name."
+  },
+  "languageGerman": {
+    "message": "tyska",
+    "description": "Language name."
+  },
+  "languageSpanish": {
+    "message": "spanska",
+    "description": "Language name."
+  },
+  "languageFrench": {
+    "message": "franska",
+    "description": "Language name."
+  },
+  "languagePortugueseBrazil": {
+    "message": "portugisiska (Brasilien)",
+    "description": "Language name."
+  },
+  "languagePortuguesePortugal": {
+    "message": "portugisiska (Portugal)",
+    "description": "Language name."
+  },
+  "languageItalian": {
+    "message": "italienska",
+    "description": "Language name."
+  },
+  "languageDutch": {
+    "message": "nederländska",
+    "description": "Language name."
+  },
+  "languagePolish": {
+    "message": "polska",
+    "description": "Language name."
+  },
+  "languageRussian": {
+    "message": "ryska",
+    "description": "Language name."
+  },
+  "languageTurkish": {
+    "message": "turkiska",
+    "description": "Language name."
+  },
+  "languageJapanese": {
+    "message": "japanska",
+    "description": "Language name."
+  },
+  "languageKorean": {
+    "message": "koreanska",
+    "description": "Language name."
+  },
+  "languageChineseSimplified": {
+    "message": "förenklad kinesiska",
+    "description": "Language name."
+  },
+  "languageChineseTraditional": {
+    "message": "traditionell kinesiska",
+    "description": "Language name."
+  },
+  "languageHindi": {
+    "message": "Hindi",
+    "description": "Language name."
+  },
+  "languageArabic": {
+    "message": "arabiska",
+    "description": "Language name."
+  },
+  "languageIndonesian": {
+    "message": "indonesiska",
+    "description": "Language name."
+  },
+  "languageUkrainian": {
+    "message": "ukrainska",
+    "description": "Language name."
+  },
+  "languageSwedish": {
+    "message": "svenska",
+    "description": "Language name."
+  },
+  "day": {
+    "message": "$1 dag",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "days": {
+    "message": "$1 dagar",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "minutes": {
+    "message": "$1 minuter",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hour": {
+    "message": "$1 timme",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "hours": {
+    "message": "$1 timmar",
+    "description": "Duration label.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "confirmDelete": {
+    "message": "Ta bort den här kupongen?",
+    "description": "Delete confirmation."
+  },
+  "errorVoucherNotFound": {
+    "message": "Kupongen hittades inte.",
+    "description": "Error message."
+  },
+  "errorNoCode": {
+    "message": "Den här kupongen saknar kod.",
+    "description": "Error message."
+  },
+  "errorPasswordRequired": {
+    "message": "Ett lösenord krävs.",
+    "description": "Error message."
+  },
+  "errorInvalidPassword": {
+    "message": "Ogiltigt lösenord eller krypterat värde.",
+    "description": "Error message."
+  },
+  "errorUnlockRequired": {
+    "message": "Upplåsning krävs.",
+    "description": "Error message."
+  },
+  "errorInvalidExport": {
+    "message": "Ogiltig kupongexport.",
+    "description": "Error message."
+  },
+  "errorEncryptedImportPassword": {
+    "message": "Ett lösenord krävs för krypterade importer.",
+    "description": "Error message."
+  },
+  "errorUnsupportedEncryptedValue": {
+    "message": "Versionen av det krypterade värdet stöds inte.",
+    "description": "Error message."
+  },
+  "errorStorageEntryQuota": {
+    "message": "Den här kupongen överskrider lagringsgränsen.",
+    "description": "Error message."
+  },
+  "errorStorageQuota": {
+    "message": "Lagringskvoten har överskridits.",
+    "description": "Error message."
+  },
+  "errorCsvHeader": {
+    "message": "CSV-exporten måste innehålla en rubrik och minst en rad.",
+    "description": "Error message."
+  },
+  "errorCsvColumns": {
+    "message": "CSV-rubriken saknar obligatoriska kolumner.",
+    "description": "Error message."
+  },
+  "errorCsvQuotes": {
+    "message": "CSV innehåller ett oavslutat citerat fält.",
+    "description": "Error message."
+  }
+}
