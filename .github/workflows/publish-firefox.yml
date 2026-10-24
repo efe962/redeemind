@@ -1,0 +1,45 @@
+name: Publish to Firefox Add-ons
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: startsWith(github.event.release.tag_name, 'v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Firefox package
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern 'redeemind-firefox.zip' --dir artifacts
+          test -s artifacts/redeemind-firefox.zip
+          echo "Downloaded Firefox package for $TAG."
+
+      - name: Upload, sign, and validate extension through AMO
+        env:
+          MOZILLA_API_KEY: ${{ secrets.MOZILLA_API_KEY }}
+          MOZILLA_API_SECRET: ${{ secrets.MOZILLA_API_SECRET }}
+          MOZILLA_ADDON_ID: ${{ secrets.MOZILLA_ADDON_ID }}
+        run: |
+          set -euo pipefail
+          mkdir -p firefox-source firefox-artifacts
+          unzip -q artifacts/redeemind-firefox.zip -d firefox-source
+          echo "Uploading Firefox package to Mozilla Add-ons."
+          npx --yes web-ext@latest sign \
+            --source-dir firefox-source \
+            --artifacts-dir firefox-artifacts \
+            --channel listed \
+            --id "$MOZILLA_ADDON_ID" \
+            --api-key "$MOZILLA_API_KEY" \
+            --api-secret "$MOZILLA_API_SECRET"
+          test -n "$(find firefox-artifacts -type f -name '*.xpi' -print -quit)"
+          echo "Mozilla Add-ons upload and validation completed."

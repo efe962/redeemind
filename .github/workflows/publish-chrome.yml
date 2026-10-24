@@ -1,0 +1,75 @@
+name: Publish to Chrome Web Store
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: startsWith(github.event.release.tag_name, 'v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Chromium package
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern 'redeemind-chromium.zip' --dir artifacts
+          test -s artifacts/redeemind-chromium.zip
+          echo "Downloaded Chromium package for $TAG."
+
+      - name: Upload and publish extension
+        env:
+          CHROME_EXTENSION_ID: ${{ secrets.CHROME_EXTENSION_ID }}
+          CHROME_PUBLISHER_ID: ${{ secrets.CHROME_PUBLISHER_ID }}
+          CHROME_CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
+          CHROME_CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
+          CHROME_REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
+        run: |
+          set -euo pipefail
+          api_root="https://chromewebstore.googleapis.com"
+
+          token_response="$(curl --fail-with-body --silent --show-error \
+            -X POST "https://oauth2.googleapis.com/token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode "client_id=$CHROME_CLIENT_ID" \
+            --data-urlencode "client_secret=$CHROME_CLIENT_SECRET" \
+            --data-urlencode "refresh_token=$CHROME_REFRESH_TOKEN" \
+            --data-urlencode "grant_type=refresh_token")"
+          access_token="$(jq -er '.access_token' <<<"$token_response")"
+          auth_header="Authorization: Bearer $access_token"
+          item_url="$api_root/v2/publishers/$CHROME_PUBLISHER_ID/items/$CHROME_EXTENSION_ID"
+
+          echo "Uploading Chromium package to Chrome Web Store."
+          curl --fail-with-body --silent --show-error \
+            -X POST -T artifacts/redeemind-chromium.zip \
+            -H "$auth_header" \
+            "$api_root/upload/v2/publishers/$CHROME_PUBLISHER_ID/items/$CHROME_EXTENSION_ID:upload" \
+            | jq .
+
+          echo "Waiting for Chrome Web Store upload validation."
+          for attempt in $(seq 1 40); do
+            status="$(curl --fail-with-body --silent --show-error \
+              -H "$auth_header" "$item_url:fetchStatus")"
+            upload_state="$(jq -r '.uploadState // empty' <<<"$status")"
+            echo "Chrome upload status ($attempt/40): ${upload_state:-unknown}"
+            case "$upload_state" in
+              SUCCESS) break ;;
+              FAILURE|FAILED) echo "$status" >&2; exit 1 ;;
+            esac
+            if [ "$attempt" -eq 40 ]; then
+              echo "Chrome upload did not finish within the polling window." >&2
+              exit 1
+            fi
+            sleep 15
+          done
+
+          echo "Submitting extension to Chrome Web Store review."
+          curl --fail-with-body --silent --show-error \
+            -X POST -H "$auth_header" "$item_url:publish" | jq .

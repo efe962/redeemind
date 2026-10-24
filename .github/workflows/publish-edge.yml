@@ -1,0 +1,103 @@
+name: Publish to Microsoft Edge Add-ons
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: startsWith(github.event.release.tag_name, 'v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Chromium package
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern 'redeemind-chromium.zip' --dir artifacts
+          test -s artifacts/redeemind-chromium.zip
+          echo "Downloaded Chromium package for $TAG."
+
+      - name: Upload, validate, and publish extension
+        env:
+          EDGE_PRODUCT_ID: ${{ secrets.EDGE_PRODUCT_ID }}
+          EDGE_CLIENT_ID: ${{ secrets.EDGE_CLIENT_ID }}
+          EDGE_API_KEY: ${{ secrets.EDGE_API_KEY }}
+        run: |
+          set -euo pipefail
+          api_root="https://api.addons.microsoftedge.microsoft.com/v1"
+          base_url="$api_root/products/$EDGE_PRODUCT_ID"
+          headers=(-H "Authorization: ApiKey $EDGE_API_KEY" -H "X-ClientID: $EDGE_CLIENT_ID")
+          publish_headers=""
+          publish_body=""
+
+          upload_headers="$(mktemp)"
+          upload_body="$(mktemp)"
+          trap 'rm -f "$upload_headers" "$upload_body" "$publish_headers" "$publish_body"' EXIT
+          echo "Uploading Chromium package to Microsoft Edge Add-ons."
+          upload_code="$(curl --silent --show-error -o "$upload_body" -D "$upload_headers" \
+            -w '%{http_code}' -X POST "${headers[@]}" \
+            -H 'Content-Type: application/zip' \
+            --upload-file artifacts/redeemind-chromium.zip \
+            "$base_url/submissions/draft/package")"
+          if [ "$upload_code" != "202" ]; then
+            cat "$upload_body" >&2
+            echo "Edge package upload failed with HTTP $upload_code." >&2
+            exit 1
+          fi
+          operation_url="$(awk 'BEGIN {IGNORECASE=1} /^Location:/ {sub(/\r$/, "", $2); print $2}' "$upload_headers")"
+          test -n "$operation_url"
+
+          echo "Waiting for Microsoft Edge package validation."
+          for attempt in $(seq 1 40); do
+            status="$(curl --fail-with-body --silent --show-error "${headers[@]}" "$operation_url")"
+            state="$(jq -r '.status // .state // empty' <<<"$status")"
+            echo "Edge upload status ($attempt/40): ${state:-unknown}"
+            case "$state" in
+              Completed|Succeeded|Success) break ;;
+              Failed|Failure|Error) echo "$status" >&2; exit 1 ;;
+            esac
+            if [ "$attempt" -eq 40 ]; then
+              echo "Edge package validation did not finish within the polling window." >&2
+              exit 1
+            fi
+            sleep 15
+          done
+
+          publish_headers="$(mktemp)"
+          publish_body="$(mktemp)"
+          echo "Submitting extension to Microsoft Edge Add-ons certification."
+          publish_code="$(curl --silent --show-error -o "$publish_body" -D "$publish_headers" \
+            -w '%{http_code}' -X POST "${headers[@]}" \
+            -H 'Content-Type: application/json' \
+            --data '{"notes":"Automated release '"$GITHUB_REF_NAME"'"}' \
+            "$base_url/submissions")"
+          if [ "$publish_code" != "202" ]; then
+            cat "$publish_body" >&2
+            echo "Edge publication submission failed with HTTP $publish_code." >&2
+            exit 1
+          fi
+          publish_operation_url="$(awk 'BEGIN {IGNORECASE=1} /^Location:/ {sub(/\r$/, "", $2); print $2}' "$publish_headers")"
+          test -n "$publish_operation_url"
+
+          echo "Waiting for Microsoft Edge publication submission."
+          for attempt in $(seq 1 40); do
+            status="$(curl --fail-with-body --silent --show-error "${headers[@]}" "$publish_operation_url")"
+            state="$(jq -r '.status // .state // empty' <<<"$status")"
+            echo "Edge publication status ($attempt/40): ${state:-unknown}"
+            case "$state" in
+              Completed|Succeeded|Success) exit 0 ;;
+              Failed|Failure|Error) echo "$status" >&2; exit 1 ;;
+            esac
+            if [ "$attempt" -eq 40 ]; then
+              echo "Edge publication did not finish within the polling window." >&2
+              exit 1
+            fi
+            sleep 15
+          done
