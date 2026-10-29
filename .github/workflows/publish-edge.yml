@@ -3,6 +3,11 @@ name: Publish to Microsoft Edge Add-ons
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag'
+        required: true
 
 permissions:
   contents: read

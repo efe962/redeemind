@@ -22,3 +22,12 @@ jobs:
         with:
           files: dist/packages/*.zip
           generate_release_notes: true
+
+      - name: Trigger store publications
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh workflow run "Publish to Chrome Web Store" --ref "$TAG" -f tag="$TAG"
+          gh workflow run "Publish to Microsoft Edge Add-ons" --ref "$TAG" -f tag="$TAG"
+          gh workflow run "Publish to Firefox Add-ons" --ref "$TAG" -f tag="$TAG"
