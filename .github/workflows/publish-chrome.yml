@@ -52,45 +52,48 @@ jobs:
           item_url="$api_root/v2/publishers/$CHROME_PUBLISHER_ID/items/$CHROME_EXTENSION_ID"
 
           echo "Uploading Chromium package to Chrome Web Store."
-          curl --fail-with-body --silent --show-error \
-            -X POST -T artifacts/redeemind-chromium.zip \
-            -H "$auth_header" \
-            "$api_root/upload/v2/publishers/$CHROME_PUBLISHER_ID/items/$CHROME_EXTENSION_ID:upload" \
-            | jq .
 
-          echo "Waiting for Chrome Web Store upload validation."
+          upload_response="$(curl --fail-with-body --silent --show-error \
+            -X POST \
+            -T artifacts/redeemind-chromium.zip \
+            -H "$auth_header" \
+            "$api_root/upload/v2/publishers/$CHROME_PUBLISHER_ID/items/$CHROME_EXTENSION_ID:upload")"
+          
+          echo "$upload_response" | jq .
+          
+          upload_state="$(jq -r '.uploadState // empty' <<<"$upload_response")"
           
           for attempt in $(seq 1 40); do
-            status="$(curl --fail-with-body --silent --show-error \
-              -H "$auth_header" "$item_url:fetchStatus")"
-          
-            upload_state="$(jq -r '.lastAsyncUploadState // empty' <<<"$status")"
-          
             echo "Chrome upload status ($attempt/40): ${upload_state:-unknown}"
           
             case "$upload_state" in
               SUCCEEDED)
                 break
                 ;;
-              FAILED|NOT_FOUND)
-                echo "$status" >&2
-                exit 1
-                ;;
-              IN_PROGRESS)
+              IN_PROGRESS|UPLOAD_IN_PROGRESS)
                 ;;
               *)
-                echo "Unexpected or missing Chrome upload state:" >&2
-                echo "$status" >&2
+                echo "Chrome upload failed or returned an unexpected state." >&2
                 exit 1
                 ;;
             esac
           
-            if [ "$attempt" -eq 40 ]; then
-              echo "Chrome upload did not finish within the polling window." >&2
-              exit 1
+            sleep 15
+          
+            status="$(curl --fail-with-body --silent --show-error \
+              -H "$auth_header" "$item_url:fetchStatus")"
+          
+            upload_state="$(jq -r '.lastAsyncUploadState // empty' <<<"$status")"
+          
+            if [ "$upload_state" = "SUCCEEDED" ]; then
+              break
             fi
           
-            sleep 15
+            if [ "$attempt" -eq 40 ]; then
+              echo "Chrome upload did not succeed within the polling window." >&2
+              echo "$status" >&2
+              exit 1
+            fi
           done
 
           echo "Submitting extension to Chrome Web Store review."

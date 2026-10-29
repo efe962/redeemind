@@ -82,8 +82,8 @@ jobs:
           echo "Submitting extension to Microsoft Edge Add-ons certification."
           publish_code="$(curl --silent --show-error -o "$publish_body" -D "$publish_headers" \
             -w '%{http_code}' -X POST "${headers[@]}" \
-            -H 'Content-Type: application/json' \
-            --data '{"notes":"Automated release '"$GITHUB_REF_NAME"'"}' \
+            -H 'Content-Type: text/plain' \
+            --data-binary "Automated release $GITHUB_REF_NAME. No accounts or credentials are required to test this extension." \
             "$base_url/submissions")"
           if [ "$publish_code" != "202" ]; then
             cat "$publish_body" >&2
