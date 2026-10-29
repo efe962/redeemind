@@ -1,7 +1,7 @@
 {
-  "name": "Redeemind",
-  "version": "0.2.5",
-  "description": "Reminds you about matching vouchers while shopping online.",
+  "name": "__MSG_extensionName__",
+  "version": "0.2.6",
+  "description": "__MSG_extensionDescription__",
   "manifest_version": 3,
   "permissions": [
     "storage",

@@ -59,19 +59,37 @@ jobs:
             | jq .
 
           echo "Waiting for Chrome Web Store upload validation."
+          
           for attempt in $(seq 1 40); do
             status="$(curl --fail-with-body --silent --show-error \
               -H "$auth_header" "$item_url:fetchStatus")"
-            upload_state="$(jq -r '.uploadState // empty' <<<"$status")"
+          
+            upload_state="$(jq -r '.lastAsyncUploadState // empty' <<<"$status")"
+          
             echo "Chrome upload status ($attempt/40): ${upload_state:-unknown}"
+          
             case "$upload_state" in
-              SUCCESS) break ;;
-              FAILURE|FAILED) echo "$status" >&2; exit 1 ;;
+              SUCCEEDED)
+                break
+                ;;
+              FAILED|NOT_FOUND)
+                echo "$status" >&2
+                exit 1
+                ;;
+              IN_PROGRESS)
+                ;;
+              *)
+                echo "Unexpected or missing Chrome upload state:" >&2
+                echo "$status" >&2
+                exit 1
+                ;;
             esac
+          
             if [ "$attempt" -eq 40 ]; then
               echo "Chrome upload did not finish within the polling window." >&2
               exit 1
             fi
+          
             sleep 15
           done
 
