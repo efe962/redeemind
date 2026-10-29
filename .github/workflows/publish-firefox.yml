@@ -43,7 +43,6 @@ jobs:
             --source-dir firefox-source \
             --artifacts-dir firefox-artifacts \
             --channel listed \
-            --id "$MOZILLA_ADDON_ID" \
             --api-key "$MOZILLA_API_KEY" \
             --api-secret "$MOZILLA_API_SECRET"
           test -n "$(find firefox-artifacts -type f -name '*.xpi' -print -quit)"

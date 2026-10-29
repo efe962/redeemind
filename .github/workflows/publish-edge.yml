@@ -56,8 +56,10 @@ jobs:
             echo "Edge package upload failed with HTTP $upload_code." >&2
             exit 1
           fi
-          operation_url="$(awk 'BEGIN {IGNORECASE=1} /^Location:/ {sub(/\r$/, "", $2); print $2}' "$upload_headers")"
-          test -n "$operation_url"
+          operation_id="$(awk 'tolower($1) == "location:" {gsub(/\r/, "", $2); print $2}' "$upload_headers")"
+          test -n "$operation_id"
+
+          operation_url="$base_url/submissions/draft/package/operations/$operation_id"
 
           echo "Waiting for Microsoft Edge package validation."
           for attempt in $(seq 1 40); do
@@ -88,8 +90,10 @@ jobs:
             echo "Edge publication submission failed with HTTP $publish_code." >&2
             exit 1
           fi
-          publish_operation_url="$(awk 'BEGIN {IGNORECASE=1} /^Location:/ {sub(/\r$/, "", $2); print $2}' "$publish_headers")"
-          test -n "$publish_operation_url"
+          publish_operation_id="$(awk 'tolower($1) == "location:" {gsub(/\r/, "", $2); print $2}' "$publish_headers")"
+          test -n "$publish_operation_id"
+          
+          publish_operation_url="$base_url/submissions/operations/$publish_operation_id"
 
           echo "Waiting for Microsoft Edge publication submission."
           for attempt in $(seq 1 40); do
