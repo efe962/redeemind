@@ -1,7 +1,7 @@
 {
   "name": "Redeemind",
-  "version": "0.1.0",
-  "description": "Erinnert an passende Gutscheine beim Online-Einkauf.",
+  "version": "0.2.5",
+  "description": "Reminds you about matching vouchers while shopping online.",
   "manifest_version": 3,
   "permissions": [
     "storage",
@@ -11,14 +11,33 @@
     "clipboardWrite",
     "activeTab"
   ],
-  "host_permissions": ["http://*/*", "https://*/*"],
-  "background": { "scripts": ["assets/background.js"], "type": "module" },
-  "action": { "default_title": "Redeemind", "default_popup": "src/popup/index.html" },
-  "options_ui": { "page": "src/options/index.html", "open_in_tab": true },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "assets/background.js"
+    ],
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Redeemind",
+    "default_popup": "src/popup/index.html"
+  },
+  "options_ui": {
+    "page": "src/options/index.html",
+    "open_in_tab": true
+  },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["assets/content.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "assets/content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
@@ -30,7 +49,11 @@
     "gecko": {
       "id": "redeemind@redeemind.app",
       "strict_min_version": "140.0",
-      "data_collection_permissions": { "required": ["none"] }
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
     },
     "gecko_android": {
       "strict_min_version": "142.0"

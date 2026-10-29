@@ -1,10 +1,13 @@
 {
   "name": "redeemind",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "sync:version": "node scripts/sync-version.mjs",
+    "prepackage": "npm run sync:version",
+    "version": "npm run sync:version",
     "build": "npm run build:chromium && npm run build:firefox",
     "build:chromium": "node scripts/build.mjs chromium",
     "build:firefox": "node scripts/build.mjs firefox",
