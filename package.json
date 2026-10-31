@@ -26,7 +26,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "nanoid": "^5.0.9",
+    "nanoid": "^6.0.2",
     "tldts": "^6.1.86",
     "webextension-polyfill": "^0.12.0",
     "zod": "^4.6.7"
